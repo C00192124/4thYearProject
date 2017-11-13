@@ -13,9 +13,17 @@ void Sprite::Render(sf::RenderWindow &w)
 
 void Sprite::Update(InputManager *i)
 {
-	if (i->down)
-	{
+	if (i->down) {
 		m_sprite.move(0, 1);
+	}
+	if (i->up) {
+		m_sprite.move(0, -1);
+	}
+	if (i->left) {
+		m_sprite.move(-1, 0);
+	}
+	if (i->right) {
+		m_sprite.move(1, 0);
 	}
 }
 

@@ -18,11 +18,23 @@ void InputManager::CheckInput(sf::RenderWindow &w)
 			case sf::Event::KeyPressed:
 				if (m_event.key.code == sf::Keyboard::Down)
 					down = true;
+				if (m_event.key.code == sf::Keyboard::Up)
+					up = true;
+				if (m_event.key.code == sf::Keyboard::Left)
+					left = true;
+				if (m_event.key.code == sf::Keyboard::Right)
+					right = true;
 				break;
 
 			case sf::Event::KeyReleased:
 				if (m_event.key.code == sf::Keyboard::Down)
 					down = false;
+				if (m_event.key.code == sf::Keyboard::Up)
+					up = false;
+				if (m_event.key.code == sf::Keyboard::Left)
+					left = false;
+				if (m_event.key.code == sf::Keyboard::Right)
+					right = false;
 				break;
 
 			default:
