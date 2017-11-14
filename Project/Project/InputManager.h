@@ -11,6 +11,7 @@ public:
 	bool up = false;
 	bool left = false;
 	bool right = false;
+	bool space = true;
 
 private:
 	sf::Event m_event;

@@ -11,34 +11,39 @@ void InputManager::CheckInput(sf::RenderWindow &w)
 	{
 		switch (m_event.type)
 		{
-			case sf::Event::Closed:
-				w.close();
-				break;
+		case sf::Event::Closed:
+			w.close();
+			break;
 
-			case sf::Event::KeyPressed:
-				if (m_event.key.code == sf::Keyboard::Down)
-					down = true;
-				if (m_event.key.code == sf::Keyboard::Up)
-					up = true;
-				if (m_event.key.code == sf::Keyboard::Left)
-					left = true;
-				if (m_event.key.code == sf::Keyboard::Right)
-					right = true;
-				break;
+		case sf::Event::KeyPressed:
+			if (m_event.key.code == sf::Keyboard::Down)
+				down = true;
+			if (m_event.key.code == sf::Keyboard::Up)
+				up = true;
+			if (m_event.key.code == sf::Keyboard::Left)
+				left = true;
+			if (m_event.key.code == sf::Keyboard::Right)
+				right = true;
+			if (m_event.key.code == sf::Keyboard::Space)
+				space = true;
+			break;
 
-			case sf::Event::KeyReleased:
-				if (m_event.key.code == sf::Keyboard::Down)
-					down = false;
-				if (m_event.key.code == sf::Keyboard::Up)
-					up = false;
-				if (m_event.key.code == sf::Keyboard::Left)
-					left = false;
-				if (m_event.key.code == sf::Keyboard::Right)
-					right = false;
-				break;
+		case sf::Event::KeyReleased:
 
-			default:
-				break;
+			if (m_event.key.code == sf::Keyboard::Down)
+				down = false;
+			if (m_event.key.code == sf::Keyboard::Up)
+				up = false;
+			if (m_event.key.code == sf::Keyboard::Left)
+				left = false;
+			if (m_event.key.code == sf::Keyboard::Right)
+				right = false;
+			if (m_event.key.code == sf::Keyboard::Space)
+				space = false;
+			break;
+
+		default:
+			break;
 		}
 		
 	}

@@ -1,6 +1,7 @@
 #include "SFML\Graphics.hpp"
-#include "Sprite.h"
+#include "Player.h"
 #include "InputManager.h"
+#include "World.h"
 
 sf::Event event;
 
@@ -9,7 +10,8 @@ void main()
 	sf::RenderWindow window(sf::VideoMode(1080, 720), "4th Year Project");
 	window.setFramerateLimit(60);
 	InputManager *input = new InputManager(event);
-	Sprite player;
+	World world;
+	Player player;
 
 	while (window.isOpen())
 	{
@@ -18,6 +20,7 @@ void main()
 
 		window.clear();
 		//draw
+		world.Render(window);
 		player.Render(window);
 
 		window.display();
