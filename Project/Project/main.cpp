@@ -7,7 +7,7 @@ sf::Event event;
 
 void main()
 {
-	sf::RenderWindow window(sf::VideoMode(1080, 720), "4th Year Project");
+	sf::RenderWindow window(sf::VideoMode(1024, 768), "4th Year Project");
 	window.setFramerateLimit(60);
 	InputManager *input = new InputManager(event);
 	World world;

@@ -4,6 +4,7 @@ Player::Player()
 {
 	m_texture.loadFromFile("Resources/Sprites/player.png");
 	m_sprite.setTexture(m_texture);
+	m_sprite.setPosition(100, 100);
 	m_dir = Down;
 	m_sprite.setTextureRect(sf::IntRect(0, m_dir * 32, 32, 32));
 }
@@ -40,6 +41,11 @@ void Player::Update(InputManager *i)
 		}
 		m_sprite.setTextureRect(sf::IntRect(m_timer * 32, m_dir * 32, 32, 32));
 	}
+}
+
+void Player::Collision(World &w)
+{
+	
 }
 
 Player::~Player() {}

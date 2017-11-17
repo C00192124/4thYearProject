@@ -1,5 +1,6 @@
 #pragma once
 #include "Sprite.h"
+#include "World.h"
 
 class Player : public Sprite
 {
@@ -11,6 +12,7 @@ public:
 	void Update(InputManager *i);
 
 private:
+	void Collision(World &w);
 
 	Direction m_dir;
 	int m_timer;

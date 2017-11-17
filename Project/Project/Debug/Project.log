@@ -1,10 +1,15 @@
-﻿  InputManager.cpp
+﻿  Player.cpp
+c:\users\gameuser\desktop\project\project\project\player.cpp(38): warning C4018: '>=': signed/unsigned mismatch
   Generating Code...
-  Skipping... (no relevant changes detected)
-  World.cpp
+  Compiling...
   main.cpp
-  Sprite.cpp
-  Player.cpp
-  NPC.cpp
+  World.cpp
+c:\users\gameuser\desktop\project\project\project\world.cpp(37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\project\project\project\world.cpp(42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\project\project\project\world.cpp(47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\project\project\project\world.cpp(52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\project\project\project\world.cpp(57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\project\project\project\world.cpp(62): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
   Project.vcxproj -> C:\Users\gameuser\Desktop\Project\Project\Debug\Project.exe
   Project.vcxproj -> C:\Users\gameuser\Desktop\Project\Project\Debug\Project.pdb (Partial PDB)

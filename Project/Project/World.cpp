@@ -16,7 +16,7 @@ World::World()
 	bottomRightWallT.loadFromFile("Resources/Sprites/bottomRightWall.png");
 	bottomRightWall.setTexture(bottomRightWallT);
 	leftWallT.loadFromFile("Resources/Sprites/leftWall.png");
-	bottomLeftWall.setTexture(bottomLeftWallT);
+	leftWall.setTexture(leftWallT);
 	rightWallT.loadFromFile("Resources/Sprites/rightWall.png");
 	rightWall.setTexture(rightWallT);
 	topWallT.loadFromFile("Resources/Sprites/topWall.png");
@@ -28,19 +28,39 @@ World::World()
 
 void World::Render(sf::RenderWindow &w)
 {
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 32; i++)
 	{
-		for (int j = 0; j < 10; j++)
+		for (int j = 0; j < 24; j++)
 		{
-			if (m_world[i][j] == 0)
+			if (m_world[j][i] == 0)
 			{
 				woodenFloorCracked.setPosition(sf::Vector2f(i * 32, j * 32));
 				w.draw(woodenFloorCracked);
 			}
-			if (m_world[i][j] == 1)
+			if (m_world[j][i] == 1)
 			{
 				woodenFloor.setPosition(sf::Vector2f(i * 32, j * 32));
 				w.draw(woodenFloor);
+			}
+			if (m_world[j][i] == 2)
+			{
+				leftWall.setPosition(sf::Vector2f(i * 32, j * 32));
+				w.draw(leftWall);
+			}
+			if (m_world[j][i] == 3)
+			{
+				rightWall.setPosition(sf::Vector2f(i * 32, j * 32));
+				w.draw(rightWall);
+			}
+			if (m_world[j][i] == 4)
+			{
+				topWall.setPosition(sf::Vector2f(i * 32, j * 32));
+				w.draw(topWall);
+			}
+			if (m_world[j][i] == 5)
+			{
+				bottomWall.setPosition(sf::Vector2f(i * 32, j * 32));
+				w.draw(bottomWall);
 			}
 		}
 	}
