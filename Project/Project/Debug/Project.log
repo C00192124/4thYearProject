@@ -1,15 +1,6 @@
-﻿  Player.cpp
-c:\users\gameuser\desktop\project\project\project\player.cpp(38): warning C4018: '>=': signed/unsigned mismatch
-  Generating Code...
-  Compiling...
-  main.cpp
-  World.cpp
-c:\users\gameuser\desktop\project\project\project\world.cpp(37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gameuser\desktop\project\project\project\world.cpp(42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gameuser\desktop\project\project\project\world.cpp(47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gameuser\desktop\project\project\project\world.cpp(52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gameuser\desktop\project\project\project\world.cpp(57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gameuser\desktop\project\project\project\world.cpp(62): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
+﻿  JSONReader.cpp
+c:\users\gameuser\desktop\project\project\project\jsonreader.cpp(49): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\jsonreader.cpp(79): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\jsonreader.cpp(96): warning C4018: '<': signed/unsigned mismatch
   Project.vcxproj -> C:\Users\gameuser\Desktop\Project\Project\Debug\Project.exe
   Project.vcxproj -> C:\Users\gameuser\Desktop\Project\Project\Debug\Project.pdb (Partial PDB)

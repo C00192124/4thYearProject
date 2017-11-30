@@ -1,0 +1,31 @@
+{
+  "name": "character1",
+  "sprite": "Resources/Sprites/SarahSamuels.png",
+  "traits": {
+    "t0": "70",
+    "t1": "65",
+    "t2": "75",
+    "t3": "70",
+    "t4": "30"
+  },
+  "dialogue": {
+    "q0": {
+      "qtext": "Hello, what can I do you for?",
+      "ans": {
+        "a0": {
+          "text": "Did you kill the man?",
+          "path": "q2"
+        },
+        "a1": {
+          "text": "Where were you last night?",
+          "path": "q3"
+        },
+        "a2": {
+          "text": "Nevermind, Goodbye",
+          "path": "exit"
+        }
+      }
+    }
+  }
+}
+

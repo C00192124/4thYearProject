@@ -119,18 +119,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Dialogue.cpp" />
+    <ClCompile Include="DialogueManager.cpp" />
     <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="JSONReader.cpp" />
+    <ClCompile Include="Json\JSON.cpp" />
+    <ClCompile Include="Json\JSONValue.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="TraitManager.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Dialogue.h" />
+    <ClInclude Include="DialogueManager.h" />
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="JSONReader.h" />
+    <ClInclude Include="Json\JSON.h" />
+    <ClInclude Include="Json\JSONValue.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="TraitManager.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,4 +1,5 @@
 #include "World.h"
+#include <iostream>
 
 World::World()
 {
@@ -34,32 +35,32 @@ void World::Render(sf::RenderWindow &w)
 		{
 			if (m_world[j][i] == 0)
 			{
-				woodenFloorCracked.setPosition(sf::Vector2f(i * 32, j * 32));
+				woodenFloorCracked.setPosition(sf::Vector2f(i * 64, j * 64));
 				w.draw(woodenFloorCracked);
 			}
 			if (m_world[j][i] == 1)
 			{
-				woodenFloor.setPosition(sf::Vector2f(i * 32, j * 32));
+				woodenFloor.setPosition(sf::Vector2f(i * 64, j * 64));
 				w.draw(woodenFloor);
 			}
 			if (m_world[j][i] == 2)
 			{
-				leftWall.setPosition(sf::Vector2f(i * 32, j * 32));
+				leftWall.setPosition(sf::Vector2f(i * 64, j * 64));
 				w.draw(leftWall);
 			}
 			if (m_world[j][i] == 3)
 			{
-				rightWall.setPosition(sf::Vector2f(i * 32, j * 32));
+				rightWall.setPosition(sf::Vector2f(i * 64, j * 64));
 				w.draw(rightWall);
 			}
 			if (m_world[j][i] == 4)
 			{
-				topWall.setPosition(sf::Vector2f(i * 32, j * 32));
+				topWall.setPosition(sf::Vector2f(i * 64, j * 64));
 				w.draw(topWall);
 			}
 			if (m_world[j][i] == 5)
 			{
-				bottomWall.setPosition(sf::Vector2f(i * 32, j * 32));
+				bottomWall.setPosition(sf::Vector2f(i * 64, j * 64));
 				w.draw(bottomWall);
 			}
 		}

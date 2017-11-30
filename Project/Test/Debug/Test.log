@@ -1,0 +1,5 @@
+﻿  unittest1.cpp
+     Creating library C:\Users\gameuser\Desktop\Project\Project\Debug\Test.lib and object C:\Users\gameuser\Desktop\Project\Project\Debug\Test.exp
+unittest1.obj : error LNK2019: unresolved external symbol "public: __thiscall Player::Player(void)" (??0Player@@QAE@XZ) referenced in function "public: __thiscall Test::PlayerTest::PlayerTest(void)" (??0PlayerTest@Test@@QAE@XZ)
+unittest1.obj : error LNK2019: unresolved external symbol "public: __thiscall Player::~Player(void)" (??1Player@@QAE@XZ) referenced in function "public: virtual __thiscall Test::PlayerTest::~PlayerTest(void)" (??1PlayerTest@Test@@UAE@XZ)
+C:\Users\gameuser\Desktop\Project\Project\Debug\Test.dll : fatal error LNK1120: 2 unresolved externals
