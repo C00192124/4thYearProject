@@ -7,25 +7,28 @@ Player::Player()
 	m_sprite.setPosition(100, 100);
 	m_dir = Down;
 	m_sprite.setTextureRect(sf::IntRect(0, m_dir * 64, 64, 64));
+	camera = sf::View(sf::FloatRect(0, 0, 1024, 768));
 }
 
-void Player::Update(InputManager *i)
+void Player::Update(InputManager *i, vector<NPC> &n, World &w)
 {
+	camera.setCenter(m_sprite.getPosition().x, m_sprite.getPosition().y);
+
 	if (i->down) {
 		m_dir = Down;
-		m_sprite.move(0, 2);
+		m_sprite.move(0, 2.5);
 	}
-	if (i->up) {
+	else if (i->up) {
 		m_dir = Up;
-		m_sprite.move(0, -2);
+		m_sprite.move(0, -2.5);
 	}
-	if (i->left) {
+	else if (i->left) {
 		m_dir = Left;
-		m_sprite.move(-2, 0);
+		m_sprite.move(-2.5, 0);
 	}
-	if (i->right) {
+	else if (i->right) {
 		m_dir = Right;
-		m_sprite.move(2, 0);
+		m_sprite.move(2.5, 0);
 	}
 	
 	//Animation
@@ -41,20 +44,62 @@ void Player::Update(InputManager *i)
 		}
 		m_sprite.setTextureRect(sf::IntRect(m_timer * 64, m_dir * 64, 64, 64));
 	}
+
+	for (int z = 0; z < n.size(); z++)
+	{
+		SpriteCollision(n.at(z).m_sprite);
+	}
+	WorldCollision(w);
 }
 
-void Player::Collision(World &w)
+void Player::SpriteCollision(sf::Sprite &s)
+{
+	CalculateCollision(s.getPosition().x, s.getPosition().x + s.getLocalBounds().width, s.getPosition().y, s.getPosition().y + s.getLocalBounds().height);
+}
+
+void Player::WorldCollision(World &w)
 {
 	for (int i = 0; i < 32; i++)
 	{
 		for (int j = 0; j < 24; j++)
 		{
-			if (w.m_world[j][i] == 1)
+			if (w.m_world[j][i] == 2 || w.m_world[j][i] == 3 || w.m_world[j][i] == 4 || w.m_world[j][i] == 5)
 			{
-
+				CalculateCollision(i * 64, (i * 64) + 64, j * 64, (j * 64) + 64);
 			}
 		}
 	}
+}
+
+void Player::CalculateCollision(float x, float width, float y, float height)
+{
+	if((m_sprite.getPosition().x + m_sprite.getLocalBounds().width >= x)
+		&& (m_sprite.getPosition().x <= width)
+		&& (m_sprite.getPosition().y + m_sprite.getLocalBounds().height >= y)
+		&& (m_sprite.getPosition().y <= height))
+	{
+		if (m_dir == Right)
+		{
+			m_sprite.move(-2.5, 0);
+		}
+		if (m_dir == Left)
+		{
+			m_sprite.move(2.5, 0);
+		}
+		if (m_dir == Up)
+		{
+			m_sprite.move(0, 2.5);
+		}
+		if (m_dir == Down)
+		{
+			m_sprite.move(0, -2.5);
+		}
+	}
+}
+
+sf::View Player::GetView()
+{
+	return camera;
 }
 
 Player::~Player() {}
