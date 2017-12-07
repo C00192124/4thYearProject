@@ -1,6 +1,6 @@
 #pragma once
-#include "Dialogue.h"
 #include "JSONReader.h"
+#include "Dialogue.h"
 
 class DialogueManager
 {
@@ -10,6 +10,7 @@ public:
 	~DialogueManager();
 
 private:
-	vector<Dialogue> d;
+	vector<Dialogue> m_dialogueObject;
+	void PrintObject();
 };
 

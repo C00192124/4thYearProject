@@ -4,7 +4,26 @@ DialogueManager::DialogueManager() {}
 
 DialogueManager::DialogueManager(JSONReader &jR)
 {
-	d = jR.loadDialogue();
+	m_dialogueObject = jR.loadDialogue();
+	PrintObject();
+}
+
+void DialogueManager::PrintObject()
+{
+
+	for (int i = 0; i < m_dialogueObject.size(); i++)
+	{
+		//Question
+		cout << "Question: " + m_dialogueObject.at(i).m_Question.m_Text << endl;
+		
+		for (int j = 0; j < m_dialogueObject.at(i).m_Answers.size(); j++)
+		{
+			//Answer
+			cout << "Answer: " + m_dialogueObject.at(i).m_Answers.at(j).m_Text << endl;
+			//Path
+			cout << "Path: " + m_dialogueObject.at(i).m_Answers.at(j).m_path << endl;
+		}
+	}
 }
 
 DialogueManager::~DialogueManager() {}

@@ -119,7 +119,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Dialogue.cpp" />
     <ClCompile Include="DialogueManager.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="JSONReader.cpp" />

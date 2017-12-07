@@ -69,9 +69,8 @@ string JSONReader::loadSprite()
 
 vector<Dialogue> JSONReader::loadDialogue()
 {
-
-	vector<Dialogue> dialogues;
-	vector<pair<string, string>> pairs;
+	vector<Dialogue> dialogueVector;
+	Dialogue d;
 
 	string dialogue("dialogue");
 	wstring wDialogue;
@@ -88,7 +87,8 @@ vector<Dialogue> JSONReader::loadDialogue()
 		wstring wQText;
 		wQText.assign(qtext.begin(), qtext.end());
 		string sq(qObj[wQText]->AsString().begin(), qObj[wQText]->AsString().end());
-		cout << sq << endl;
+
+		d.AddQuestion(sq);
 		
 		string ans("ans");
 		wstring wAns;
@@ -96,7 +96,6 @@ vector<Dialogue> JSONReader::loadDialogue()
 		JSONObject ansObj = qObj[wAns]->AsObject();
 		for (int j = 0; j < ansObj.size(); j++)
 		{
-			pair<string, string> answers;
 
 			//Answer text
 			string a("a" + to_string(j));
@@ -107,20 +106,18 @@ vector<Dialogue> JSONReader::loadDialogue()
 			wstring wAText;
 			wAText.assign(atext.begin(), atext.end());
 			string sa(aObj[wAText]->AsString().begin(), aObj[wAText]->AsString().end());
-			answers.first = sa;
-			cout << sa << endl;
 			
 			//Answer path
 			string apath("path");
 			wstring wAPath;
 			wAPath.assign(apath.begin(), apath.end());
 			string sp(aObj[wAPath]->AsString().begin(), aObj[wAPath]->AsString().end());
-			answers.second = sp;
-			cout << sp << endl;
 
-			pairs.push_back(answers);
+			d.AddAnswer(sa, sp);
 		}
+
+		dialogueVector.push_back(d);
 	}
 
-	return dialogues;
+	return dialogueVector;
 }
