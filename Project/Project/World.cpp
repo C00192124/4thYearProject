@@ -29,9 +29,9 @@ World::World()
 
 void World::Render(sf::RenderWindow &w)
 {
-	for (int i = 0; i < 32; i++)
+	for (int i = 0; i < worldWidth; i++)
 	{
-		for (int j = 0; j < 24; j++)
+		for (int j = 0; j < worldHeight; j++)
 		{
 			if (m_world[j][i] == 0)
 			{

@@ -9,8 +9,10 @@ public:
 	DialogueManager(JSONReader &jR);
 	~DialogueManager();
 
-private:
 	vector<Dialogue> m_dialogueObject;
+
+private:
+	
 	void PrintObject();
 };
 

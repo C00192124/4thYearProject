@@ -36,6 +36,10 @@ public:
 	};
 
 private:
+
+	const int worldHeight = 24;
+	const int worldWidth = 32;
+
 	sf::Texture woodenFloorT;
 	sf::Sprite woodenFloor;
 
