@@ -1,6 +1,6 @@
-﻿  Skipping... (no relevant changes detected)
-  SoundManager.cpp
-  JSONReader.cpp
-  DialogueManager.cpp
+﻿  JSONReader.cpp
+c:\users\gameuser\desktop\project\project\project\jsonreader.cpp(49): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\jsonreader.cpp(78): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\jsonreader.cpp(98): warning C4018: '<': signed/unsigned mismatch
   Project.vcxproj -> C:\Users\gameuser\Desktop\Project\Project\Debug\Project.exe
   Project.vcxproj -> C:\Users\gameuser\Desktop\Project\Project\Debug\Project.pdb (Partial PDB)

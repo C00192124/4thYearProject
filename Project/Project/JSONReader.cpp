@@ -70,7 +70,6 @@ string JSONReader::loadSprite()
 vector<Dialogue> JSONReader::loadDialogue()
 {
 	vector<Dialogue> dialogueVector;
-	Dialogue d;
 
 	string dialogue("dialogue");
 	wstring wDialogue;
@@ -78,6 +77,8 @@ vector<Dialogue> JSONReader::loadDialogue()
 	JSONObject dialObj = m_object[wDialogue]->AsObject();
 	for (int i = 0; i < dialObj.size(); i++)
 	{
+		Dialogue d;
+
 		//Question text
 		string q("q" + to_string(i));
 		wstring wQ;

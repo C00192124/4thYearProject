@@ -14,5 +14,7 @@ public:
 private:
 	
 	void PrintObject();
+
+	string previousPath;
 };
 

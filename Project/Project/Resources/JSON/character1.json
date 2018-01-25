@@ -13,15 +13,54 @@
       "qtext": "Hello, what can I do you for?",
       "ans": {
         "a0": {
-          "text": "Did you kill the man?",
-          "path": "q2"
+          "text": "Did you kill her?",
+          "path": "q1"
         },
         "a1": {
           "text": "Where were you last night?",
+          "path": "q2"
+        },
+        "a2": {
+          "text": "Nevermind, Goodbye.",
+          "path": "exit"
+        }
+      }
+    },
+    "q1": {
+      "qtext": "Are you crazy?",
+      "ans": {
+        "a0": {
+          "text": "Sorry, I shouldn't have been so forward.",
+          "path": "q0"
+        },
+        "a1": {
+          "text": "Nevermind, Goodbye.",
+          "path": "exit"
+        }
+      }
+    },
+    "q2": {
+      "qtext": "I spent the night in my room.",
+      "ans": {
+        "a0": {
+          "text": "Can somebody confirm this?",
           "path": "q3"
         },
         "a2": {
+          "text": "Did you kill her?",
+          "path": "q1"
+        },
+        "a3": {
           "text": "Nevermind, Goodbye",
+          "path": "exit"
+        }
+      }
+    },
+    "q3": {
+      "qtext": "Get away from me!",
+      "ans": {
+        "a0": {
+          "text": "Sorry.",
           "path": "exit"
         }
       }
