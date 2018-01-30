@@ -5,6 +5,7 @@ DialogueManager::DialogueManager() {}
 DialogueManager::DialogueManager(JSONReader &jR)
 {
 	m_dialogueObject = jR.loadDialogue();
+	path = "q1";
 	PrintObject();
 }
 
@@ -23,6 +24,8 @@ void DialogueManager::PrintObject()
 			//Path
 			cout << "Path: " + m_dialogueObject.at(i).m_Answers.at(j).m_path << endl;
 		}
+
+		cout << "" << endl;
 	}
 }
 

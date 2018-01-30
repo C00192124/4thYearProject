@@ -46,11 +46,11 @@
           "text": "Can somebody confirm this?",
           "path": "q3"
         },
-        "a2": {
+        "a1": {
           "text": "Did you kill her?",
           "path": "q1"
         },
-        "a3": {
+        "a2": {
           "text": "Nevermind, Goodbye",
           "path": "exit"
         }
