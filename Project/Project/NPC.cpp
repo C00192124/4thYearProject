@@ -12,9 +12,37 @@ NPC::NPC(string jsonFile)
 	m_sprite.setPosition(500, 500);
 }
 
-void NPC::Update()
+void NPC::Update(sf::Sprite &s, InputManager *i)
 {
+	if (SpeakCollision(s, i))
+	{
+		//trigger speach
+	}
+}
 
+bool NPC::SpeakCollision(sf::Sprite &s, InputManager *i)
+{
+	if (i->space)
+	{
+		if (CalculateCollision(s.getPosition().x - 32, s.getPosition().x + s.getLocalBounds().width + 32, s.getPosition().y - 32, s.getPosition().y + s.getLocalBounds().height + 32))
+		{
+			cout << "Speak" << endl;
+			return true;
+		}
+		else return false;
+	}
+}
+
+bool NPC::CalculateCollision(float x, float width, float y, float height)
+{
+	if ((m_sprite.getPosition().x + m_sprite.getLocalBounds().width >= x)
+		&& (m_sprite.getPosition().x <= width)
+		&& (m_sprite.getPosition().y + m_sprite.getLocalBounds().height >= y)
+		&& (m_sprite.getPosition().y <= height))
+	{
+		return true;
+	}
+	else return false;
 }
 
 NPC::~NPC(){}

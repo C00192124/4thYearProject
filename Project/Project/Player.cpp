@@ -54,29 +54,7 @@ void Player::Update(InputManager *i, vector<NPC> &n, World &w)
 
 void Player::SpriteCollision(sf::Sprite &s)
 {
-	CalculateCollision(s.getPosition().x, s.getPosition().x + s.getLocalBounds().width, s.getPosition().y, s.getPosition().y + s.getLocalBounds().height);
-}
-
-void Player::WorldCollision(World &w)
-{
-	for (int i = 0; i < 32; i++)
-	{
-		for (int j = 0; j < 24; j++)
-		{
-			if (w.m_world[j][i] == 2 || w.m_world[j][i] == 3 || w.m_world[j][i] == 4 || w.m_world[j][i] == 5)
-			{
-				CalculateCollision(i * 64, (i * 64) + 64, j * 64, (j * 64) + 64);
-			}
-		}
-	}
-}
-
-void Player::CalculateCollision(float x, float width, float y, float height)
-{
-	if((m_sprite.getPosition().x + m_sprite.getLocalBounds().width >= x)
-		&& (m_sprite.getPosition().x <= width)
-		&& (m_sprite.getPosition().y + m_sprite.getLocalBounds().height >= y)
-		&& (m_sprite.getPosition().y <= height))
+	if (CalculateCollision(s.getPosition().x, s.getPosition().x + s.getLocalBounds().width, s.getPosition().y, s.getPosition().y + s.getLocalBounds().height))
 	{
 		if (m_dir == Right)
 		{
@@ -95,6 +73,50 @@ void Player::CalculateCollision(float x, float width, float y, float height)
 			m_sprite.move(0, -2.5);
 		}
 	}
+}
+
+void Player::WorldCollision(World &w)
+{
+	for (int i = 0; i < 32; i++)
+	{
+		for (int j = 0; j < 24; j++)
+		{
+			if (w.m_world[j][i] == 2 || w.m_world[j][i] == 3 || w.m_world[j][i] == 4 || w.m_world[j][i] == 5)
+			{
+				if (CalculateCollision(i * 64, (i * 64) + 64, j * 64, (j * 64) + 64))
+				{
+					if (m_dir == Right)
+					{
+						m_sprite.move(-2.5, 0);
+					}
+					if (m_dir == Left)
+					{
+						m_sprite.move(2.5, 0);
+					}
+					if (m_dir == Up)
+					{
+						m_sprite.move(0, 2.5);
+					}
+					if (m_dir == Down)
+					{
+						m_sprite.move(0, -2.5);
+					}
+				}
+			}
+		}
+	}
+}
+
+bool Player::CalculateCollision(float x, float width, float y, float height)
+{
+	if((m_sprite.getPosition().x + m_sprite.getLocalBounds().width >= x)
+		&& (m_sprite.getPosition().x <= width)
+		&& (m_sprite.getPosition().y + m_sprite.getLocalBounds().height >= y)
+		&& (m_sprite.getPosition().y <= height))
+	{
+		return true;
+	}
+	else return false;
 }
 
 sf::View Player::GetView()

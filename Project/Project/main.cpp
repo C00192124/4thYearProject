@@ -27,8 +27,13 @@ void main()
 		input->CheckInput(window);
 		sound.Background();
 		window.setView(player.GetView());
+
 		player.Update(input, characters, world);
-		
+		for (int i = 0; i < characters.size(); i++)
+		{
+			characters.at(i).Update(player.m_sprite, input);
+		}
+
 		window.clear();
 		//draw
 		world.Render(window);

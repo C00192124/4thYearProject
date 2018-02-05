@@ -21,7 +21,7 @@ private:
 	sf::Time time;
 	sf::View camera;
 
-	void CalculateCollision(float x, float width, float y, float height);
+	bool CalculateCollision(float x, float width, float y, float height);
 	void SpriteCollision(sf::Sprite &s);
 	void WorldCollision(World &w);
 	
