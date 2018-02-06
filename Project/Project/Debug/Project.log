@@ -1,9 +1,10 @@
-﻿  InputManager.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  main.cpp
-  Sprite.cpp
-  Player.cpp
-  NPC.cpp
+﻿  JSONReader.cpp
+c:\users\gameuser\desktop\project\project\project\jsonreader.cpp(49): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\jsonreader.cpp(79): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\jsonreader.cpp(98): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\gameuser\desktop\project\project\project\jsonreader.cpp(121): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\jsonreader.cpp(141): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\jsonreader.cpp(166): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\jsonreader.cpp(171): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   Project.vcxproj -> C:\Users\gameuser\Desktop\Project\Project\Debug\Project.exe
   Project.vcxproj -> C:\Users\gameuser\Desktop\Project\Project\Debug\Project.pdb (Partial PDB)

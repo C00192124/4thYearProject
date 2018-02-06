@@ -67,9 +67,52 @@ string JSONReader::loadSprite()
 	return s;
 }
 
-vector<Dialogue> JSONReader::loadDialogue()
+pair<vector<Threshold>,vector<Dialogue>> JSONReader::loadDialogue()
 {
 	vector<Dialogue> dialogueVector;
+	vector<Threshold> thresholdVector;
+
+	string thresholds("thresholds");
+	wstring wThresholds;
+	wThresholds.assign(thresholds.begin(), thresholds.end());
+	JSONObject threshObj = m_object[wThresholds]->AsObject();
+	for (int i = 0; i < threshObj.size(); i++)
+	{
+		Threshold t;
+
+		string sThresh("tr" + to_string(i));
+		wstring wthreshText;
+		wthreshText.assign(sThresh.begin(), sThresh.end());
+		JSONObject trObj = threshObj[wthreshText]->AsObject();
+
+		//Threshold trait
+		string sTrait("trait");
+		wstring wtText;
+		wtText.assign(sTrait.begin(), sTrait.end());
+		string tTrait(trObj[wtText]->AsString().begin(), trObj[wtText]->AsString().end());
+
+		//Threshold value
+		string sValue("value");
+		wstring wvValue;
+		wvValue.assign(sValue.begin(), sValue.end());
+		int tValue = trObj[wvValue]->AsNumber();
+
+		//Threshold condition
+		string sCon("condition");
+		wstring wcText;
+		wcText.assign(sCon.begin(), sCon.end());
+		string tCon(trObj[wcText]->AsString().begin(), trObj[wcText]->AsString().end());
+
+		//Threshold path
+		string sPath("path");
+		wstring wtPath;
+		wtPath.assign(sPath.begin(), sPath.end());
+		string tPath(trObj[wtPath]->AsString().begin(), trObj[wtPath]->AsString().end());
+
+		t = Threshold(tTrait, tValue, tCon, tPath);
+		thresholdVector.push_back(t);
+
+	}
 
 	string dialogue("dialogue");
 	wstring wDialogue;
@@ -114,11 +157,29 @@ vector<Dialogue> JSONReader::loadDialogue()
 			wAPath.assign(apath.begin(), apath.end());
 			string sp(aObj[wAPath]->AsString().begin(), aObj[wAPath]->AsString().end());
 
-			d.AddAnswer(sa, sp);
+			//Answer deltas
+			string dpath("deltas");
+			wstring wDPath;
+			wDPath.assign(dpath.begin(), dpath.end());
+			JSONObject deltaObj = aObj[wDPath]->AsObject();
+			vector<int> deltaVector;
+			for (int k = 0; k < deltaObj.size(); k++)
+			{
+				string d("t" + to_string(k));
+				wstring wD;
+				wD.assign(d.begin(), d.end());
+				int dint = deltaObj[wD]->AsNumber();
+				deltaVector.push_back(dint);
+			}
+
+			d.AddAnswer(sa, sp, deltaVector);
 		}
 
 		dialogueVector.push_back(d);
 	}
 
-	return dialogueVector;
+	pair<vector<Threshold>, vector<Dialogue>> pair;
+	pair.first = thresholdVector;
+	pair.second = dialogueVector;
+	return pair;
 }

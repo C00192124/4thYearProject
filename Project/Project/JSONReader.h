@@ -15,7 +15,7 @@ public:
 	JSONReader(std::string const & filename);
 	~JSONReader();
 	vector<int> loadTraits();
-	vector<Dialogue> loadDialogue();
+	pair<vector<Threshold>, vector<Dialogue>> loadDialogue();
 	string loadSprite();
 
 private:

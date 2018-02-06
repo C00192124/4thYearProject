@@ -9,7 +9,7 @@ public:
 	DialogueManager(JSONReader &jR);
 	~DialogueManager();
 
-	vector<Dialogue> m_dialogueObject;
+	pair<vector<Threshold>,vector<Dialogue>> m_dialogueObject;
 
 private:
 	

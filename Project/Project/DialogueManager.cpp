@@ -12,17 +12,17 @@ DialogueManager::DialogueManager(JSONReader &jR)
 void DialogueManager::PrintObject()
 {
 
-	for (int i = 0; i < m_dialogueObject.size(); i++)
+	for (int i = 0; i < m_dialogueObject.second.size(); i++)
 	{
 		//Question
-		cout << "Question: " + m_dialogueObject.at(i).m_Question.m_Text << endl;
+		cout << "Question: " + m_dialogueObject.second.at(i).m_Question.m_Text << endl;
 		
-		for (int j = 0; j < m_dialogueObject.at(i).m_Answers.size(); j++)
+		for (int j = 0; j < m_dialogueObject.second.at(i).m_Answers.size(); j++)
 		{
 			//Answer
-			cout << "Answer: " + m_dialogueObject.at(i).m_Answers.at(j).m_Text << endl;
+			cout << "Answer: " + m_dialogueObject.second.at(i).m_Answers.at(j).m_Text << endl;
 			//Path
-			cout << "Path: " + m_dialogueObject.at(i).m_Answers.at(j).m_path << endl;
+			cout << "Path: " + m_dialogueObject.second.at(i).m_Answers.at(j).m_path << endl;
 		}
 
 		cout << "" << endl;
