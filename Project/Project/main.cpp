@@ -27,8 +27,11 @@ void main()
 
 	vector<NPC> characters;
 	NPC KevinLionetti;
-	KevinLionetti.Init("Resources/JSON/kevinlionetti.json");
+	KevinLionetti.Init("Resources/JSON/kevinlionetti.json", sf::Vector2f(400,300));
+	NPC ThomasSteinkeller;
+	ThomasSteinkeller.Init("Resources/JSON/thomassteinkeller.json", sf::Vector2f(200, 300));
 	characters.push_back(KevinLionetti);
+	characters.push_back(ThomasSteinkeller);
 
 	while (window.isOpen())
 	{

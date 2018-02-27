@@ -12,7 +12,7 @@ public:
 	NPC() {};
 	~NPC() {};
 
-	void Init(string jsonFile);
+	void Init(string jsonFile, sf::Vector2f pos);
 	void Update(sf::Sprite &s, InputManager *i);
 	void Render(sf::RenderWindow &w);
 

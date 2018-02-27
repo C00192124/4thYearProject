@@ -86,7 +86,7 @@ void Player::WorldCollision(World &w)
 	{
 		for (int j = 0; j < 24; j++)
 		{
-			if (w.m_world[j][i] == 2 || w.m_world[j][i] == 3 || w.m_world[j][i] == 4 || w.m_world[j][i] == 5)
+			if (w.m_world[j][i] == 2 || w.m_world[j][i] == 3 || w.m_world[j][i] == 4 || w.m_world[j][i] == 5 || w.m_world[j][i] == 10)
 			{
 				if (CalculateCollision(i * 64, (i * 64) + 64, j * 64, (j * 64) + 64))
 				{

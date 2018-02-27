@@ -1,7 +1,6 @@
 #include "JSONReader.h"
-JSONReader::JSONReader() {}
 
-JSONReader::JSONReader(std::string const & filename)
+void JSONReader::Init(std::string const & filename)
 {
 
 	loadJSONData(filename);
@@ -12,10 +11,6 @@ JSONReader::JSONReader(std::string const & filename)
 		throw std::exception(s.c_str());
 	}
 	m_object = m_value->AsObject();
-}
-
-JSONReader::~JSONReader() {
-	//delete m_value;
 }
 
 void JSONReader::loadJSONData(std::string const & filename)

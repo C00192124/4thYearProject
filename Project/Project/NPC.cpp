@@ -1,8 +1,9 @@
 #include "NPC.h"
 
-void NPC::Init(string jsonFile)
+void NPC::Init(string jsonFile, sf::Vector2f pos)
 {
-	m_jR = JSONReader(jsonFile);
+	m_jR = JSONReader();
+	m_jR.Init(jsonFile);
 	m_traits = m_jR.loadTraits();
 	m_spriteFile = m_jR.loadSprite();
 	m_name = m_jR.loadName();
@@ -10,7 +11,7 @@ void NPC::Init(string jsonFile)
 	m_dM.Init(m_jR, m_name);
 	m_texture.loadFromFile(m_spriteFile);
 	m_sprite.setTexture(m_texture);
-	m_sprite.setPosition(300, 300);
+	m_sprite.setPosition(pos);
 	m_sprite.setTextureRect(sf::IntRect(0, 0, 64, 64));
 	m_speaking = false;
 	m_speakTimer = 0;

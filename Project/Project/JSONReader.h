@@ -11,9 +11,10 @@ using namespace std;
 class JSONReader {
 public:
 
-	JSONReader();
-	JSONReader(std::string const & filename);
-	~JSONReader();
+	JSONReader() {};
+	~JSONReader() {};
+
+	void Init(std::string const & filename);
 	vector<int> loadTraits();
 	pair<vector<Threshold>, vector<Dialogue>> loadDialogue();
 	string loadSprite();

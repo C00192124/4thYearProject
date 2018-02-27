@@ -24,6 +24,10 @@ World::World()
 	topWall.setTexture(topWallT);
 	bottomWallT.loadFromFile("Resources/Sprites/bottomWall.png");
 	bottomWall.setTexture(bottomWallT);
+	tableT.loadFromFile("Resources/Sprites/table.png");
+	table.setTexture(tableT);
+	tileFloorT.loadFromFile("Resources/Sprites/tileFloor.png");
+	tileFloor.setTexture(tileFloorT);
 
 }
 
@@ -62,6 +66,36 @@ void World::Render(sf::RenderWindow &w)
 			{
 				bottomWall.setPosition(sf::Vector2f(i * 64, j * 64));
 				w.draw(bottomWall);
+			}
+			if (m_world[j][i] == 6)
+			{
+				bottomLeftWall.setPosition(sf::Vector2f(i * 64, j * 64));
+				w.draw(bottomLeftWall);
+			}
+			if (m_world[j][i] == 7)
+			{
+				bottomRightWall.setPosition(sf::Vector2f(i * 64, j * 64));
+				w.draw(bottomRightWall);
+			}
+			if (m_world[j][i] == 8)
+			{
+				topLeftWall.setPosition(sf::Vector2f(i * 64, j * 64));
+				w.draw(topLeftWall);
+			}
+			if (m_world[j][i] == 9)
+			{
+				topRightWall.setPosition(sf::Vector2f(i * 64, j * 64));
+				w.draw(topRightWall);
+			}
+			if (m_world[j][i] == 10)
+			{
+				table.setPosition(sf::Vector2f(i * 64, j * 64));
+				w.draw(table);
+			}
+			if (m_world[j][i] == 11)
+			{
+				tileFloor.setPosition(sf::Vector2f(i * 64, j * 64));
+				w.draw(tileFloor);
 			}
 		}
 	}
