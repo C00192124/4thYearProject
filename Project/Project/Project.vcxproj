@@ -125,20 +125,22 @@
     <ClCompile Include="Json\JSON.cpp" />
     <ClCompile Include="Json\JSONValue.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SoundManager.cpp" />
-    <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="TraitManager.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dialogue.h" />
     <ClInclude Include="DialogueManager.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="JSONReader.h" />
     <ClInclude Include="Json\JSON.h" />
     <ClInclude Include="Json\JSONValue.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SoundManager.h" />

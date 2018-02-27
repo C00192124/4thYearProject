@@ -12,6 +12,7 @@ public:
 
 	enum Direction { Down, Left, Right, Up };
 	void Update(InputManager *i, vector<NPC> &n, World &w);
+	void Render(sf::RenderWindow &w);
 	sf::View GetView();
 
 private:

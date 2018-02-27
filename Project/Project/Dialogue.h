@@ -41,10 +41,10 @@ class Dialogue
 public:
 	Dialogue() {}
 	~Dialogue() {}
+	string m_id;
 	Question m_Question;
 	vector<Answer> m_Answers;
 	vector<Threshold> m_Thresholds;
 	void AddQuestion(string s) { Question q(s); m_Question = q; }
 	void AddAnswer(string s, string p, vector<int> d) { Answer answer(s, p, d); m_Answers.push_back(answer); }
-	void AddThreshold(string t, int n, string c, string p) { Threshold threshold(t, n, c, p); m_Thresholds.push_back(threshold); }
 };

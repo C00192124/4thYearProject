@@ -132,6 +132,7 @@ pair<vector<Threshold>,vector<Dialogue>> JSONReader::loadDialogue()
 		wQText.assign(qtext.begin(), qtext.end());
 		string sq(qObj[wQText]->AsString().begin(), qObj[wQText]->AsString().end());
 
+		d.m_id = q;
 		d.AddQuestion(sq);
 		
 		string ans("ans");

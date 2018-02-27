@@ -52,6 +52,11 @@ void Player::Update(InputManager *i, vector<NPC> &n, World &w)
 	WorldCollision(w);
 }
 
+void Player::Render(sf::RenderWindow &w)
+{
+	w.draw(m_sprite);
+}
+
 void Player::SpriteCollision(sf::Sprite &s)
 {
 	if (CalculateCollision(s.getPosition().x, s.getPosition().x + s.getLocalBounds().width, s.getPosition().y, s.getPosition().y + s.getLocalBounds().height))

@@ -12,6 +12,7 @@ public:
 	bool left = false;
 	bool right = false;
 	bool space = false;
+	bool enter = false;
 
 private:
 	sf::Event m_event;

@@ -5,9 +5,8 @@
 class Sprite
 {
 public:
-	Sprite();
-	~Sprite();
-	void Render(sf::RenderWindow &w);
+	Sprite() {};
+	~Sprite() {};
 
 	sf::Texture m_texture;
 	sf::Sprite m_sprite;

@@ -26,6 +26,8 @@ void InputManager::CheckInput(sf::RenderWindow &w)
 				right = true;
 			if (m_event.key.code == sf::Keyboard::Space)
 				space = true;
+			if (m_event.key.code == sf::Keyboard::Return)
+				enter = true;
 			break;
 
 		case sf::Event::KeyReleased:
@@ -40,6 +42,8 @@ void InputManager::CheckInput(sf::RenderWindow &w)
 				right = false;
 			if (m_event.key.code == sf::Keyboard::Space)
 				space = false;
+			if (m_event.key.code == sf::Keyboard::Return)
+				enter = false;
 			break;
 
 		default:

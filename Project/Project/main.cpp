@@ -4,15 +4,23 @@
 #include "World.h"
 #include "NPC.h"
 #include "SoundManager.h"
+#include "GameState.h"
+#include "Menu.h"
 
 sf::Event event;
 
 void main()
 {
-	sf::RenderWindow window(sf::VideoMode(1024, 768), "4th Year Project");
+	float windowWidth = 1024;
+	float windowHeight = 768;
+
+	GameState state = GameState::MENU;
+
+	sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "4th Year Project");
 	window.setFramerateLimit(60);
 	
 	InputManager *input = new InputManager(event);
+	Menu menu(windowWidth, windowHeight, input);
 	SoundManager sound;
 	World world;
 	Player player;
@@ -28,20 +36,38 @@ void main()
 		sound.Background();
 		window.setView(player.GetView());
 
-		player.Update(input, characters, world);
-		for (int i = 0; i < characters.size(); i++)
+
+		//Update
+		if (state == GameState::GAME)
 		{
-			characters.at(i).Update(player.m_sprite, input);
+			player.Update(input, characters, world);
+			for (int i = 0; i < characters.size(); i++)
+			{
+				characters.at(i).Update(player.m_sprite, input);
+			}
+		}
+		else
+		{
+			menu.update();
+			menu.selectedItem(window, state);
 		}
 
-		window.clear();
 		//draw
-		world.Render(window);
-		for (int i = 0; i < characters.size(); i++)
+		window.clear();
+		
+		if (state == GameState::GAME)
 		{
-			characters.at(i).Render(window);
+			world.Render(window);
+			for (int i = 0; i < characters.size(); i++)
+			{
+				characters.at(i).Render(window);
+			}
+			player.Render(window);
 		}
-		player.Render(window);
+		else
+		{
+			menu.draw(window);
+		}
 
 		window.display();
 	}
