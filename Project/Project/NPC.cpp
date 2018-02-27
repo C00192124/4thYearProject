@@ -1,6 +1,6 @@
 #include "NPC.h"
 
-NPC::NPC(string jsonFile)
+void NPC::Init(string jsonFile)
 {
 	m_jR = JSONReader(jsonFile);
 	m_traits = m_jR.loadTraits();
@@ -9,8 +9,9 @@ NPC::NPC(string jsonFile)
 	m_dM.Init(m_jR);
 	m_texture.loadFromFile(m_spriteFile);
 	m_sprite.setTexture(m_texture);
-	m_sprite.setPosition(500, 500);
+	m_sprite.setPosition(300, 300);
 	m_speaking = false;
+	m_speakTimer = 0;
 }
 
 void NPC::Update(sf::Sprite &s, InputManager *i)
@@ -27,7 +28,17 @@ void NPC::Update(sf::Sprite &s, InputManager *i)
 	}
 	else
 	{
-
+		m_speakTimer++;
+		if (i->up && m_speakTimer > 20)
+		{
+			m_dM.MoveUp();
+			m_speakTimer = 0;
+		}
+		else if (i->down && m_speakTimer > 20)
+		{
+			m_dM.MoveDown();
+			m_speakTimer = 0;
+		}
 	}
 }
 
@@ -64,5 +75,3 @@ bool NPC::CalculateCollision(float x, float width, float y, float height)
 	}
 	else return false;
 }
-
-NPC::~NPC(){}

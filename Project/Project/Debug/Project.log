@@ -1,10 +1,14 @@
-﻿  DialogueManager.cpp
-c:\users\gameuser\desktop\project\project\project\dialoguemanager.cpp(31): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\desktop\project\project\project\dialoguemanager.cpp(41): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\desktop\project\project\project\dialoguemanager.cpp(48): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\desktop\project\project\project\dialoguemanager.cpp(56): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\desktop\project\project\project\dialoguemanager.cpp(76): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\desktop\project\project\project\dialoguemanager.cpp(81): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\desktop\project\project\project\dialoguemanager.cpp(90): warning C4018: '<': signed/unsigned mismatch
+﻿  main.cpp
+c:\users\gameuser\desktop\project\project\project\main.cpp(19): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+c:\users\gameuser\desktop\project\project\project\main.cpp(49): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\main.cpp(66): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Compiling...
+  Player.cpp
+c:\users\gameuser\desktop\project\project\project\player.cpp(41): warning C4018: '>=': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\player.cpp(48): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\player.cpp(91): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  NPC.cpp
+  Generating Code...
   Project.vcxproj -> C:\Users\gameuser\Desktop\Project\Project\Debug\Project.exe
   Project.vcxproj -> C:\Users\gameuser\Desktop\Project\Project\Debug\Project.pdb (Partial PDB)

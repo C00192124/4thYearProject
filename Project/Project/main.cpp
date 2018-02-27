@@ -26,8 +26,9 @@ void main()
 	Player player;
 
 	vector<NPC> characters;
-	NPC npc("Resources/JSON/character1.json");
-	characters.push_back(npc);
+	NPC test;
+	test.Init("Resources/JSON/character1.json");
+	characters.push_back(test);
 
 	while (window.isOpen())
 	{
@@ -40,7 +41,11 @@ void main()
 		//Update
 		if (state == GameState::GAME)
 		{
-			player.Update(input, characters, world);
+			bool temp = characters.at(0).m_speaking;
+			if (!temp)
+			{
+				player.Update(input, characters, world);
+			}
 			for (int i = 0; i < characters.size(); i++)
 			{
 				characters.at(i).Update(player.m_sprite, input);
