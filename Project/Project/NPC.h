@@ -25,6 +25,7 @@ private:
 	vector<int> m_traits;
 	string m_spriteFile;
 	int m_speakTimer;
+	string m_name;
 
 	bool SpeakCollision(sf::Sprite &s, InputManager *i);
 	bool CalculateCollision(float x, float width, float y, float height);

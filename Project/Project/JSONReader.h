@@ -17,6 +17,7 @@ public:
 	vector<int> loadTraits();
 	pair<vector<Threshold>, vector<Dialogue>> loadDialogue();
 	string loadSprite();
+	string loadName();
 
 private:
 	JSONValue *m_value;

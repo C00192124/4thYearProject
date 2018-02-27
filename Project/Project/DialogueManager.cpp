@@ -1,18 +1,22 @@
 #include "DialogueManager.h"
 
-void DialogueManager::Init(JSONReader &jR)
+void DialogueManager::Init(JSONReader &jR, string name)
 {
 	m_dialogueObject = jR.loadDialogue();
 	m_path = "q0";
-	m_font.loadFromFile("Resources/arial.ttf");
+	m_font.loadFromFile("Resources/blackjack.otf");
 	m_bubbleTexture.loadFromFile("Resources/Sprites/speechBubble.png");
 	m_speechBubble.setTexture(m_bubbleTexture);
 	m_selectorTexture.loadFromFile("Resources/Sprites/textSelector.png");
 	m_textSelector.setTexture(m_selectorTexture);
 	m_textSelector.setOrigin(m_textSelector.getLocalBounds().width / 2, m_textSelector.getLocalBounds().height / 2);
-	m_selectorY = 600;
+	m_selectorY = 605;
 	m_selected = 0;
 	m_speaking = false;
+	m_name.setString(name);
+	m_name.setFont(m_font);
+	m_name.setFillColor(sf::Color::White);
+	m_name.setCharacterSize(30);
 	//PrintObject();
 }
 
@@ -38,10 +42,33 @@ void DialogueManager::MoveUp()
 
 void DialogueManager::MoveDown()
 {
-	if (m_selected != 2)
+	if (m_selected != m_maxSelections)
 	{
 		m_selectorY += 50;
 		m_selected += 1;
+	}
+}
+
+void DialogueManager::Select()
+{
+	bool brk = false;
+	for (int i = 0; i < m_dialogueObject.second.size(); i++)
+	{
+		if (m_dialogueObject.second.at(i).m_id == m_path)
+		{
+			m_previousPath = m_path;
+			m_path = m_dialogueObject.second.at(i).m_Answers.at(m_selected).m_path;
+			if (m_path != "exit")
+			{
+				GetText();
+				brk = true;
+			}
+			else
+			{
+				m_speaking = false;
+			}
+		}
+		if (brk) break;
 	}
 }
 
@@ -62,20 +89,29 @@ void DialogueManager::Render(sf::RenderWindow &w)
 		}
 
 		m_textSelector.setPosition(getPixelCoords(60, m_selectorY, w));
+		m_name.setPosition(getPixelCoords(800, 520, w));
 		w.draw(m_textSelector);
+		w.draw(m_name);
 	}
 }
 
 void DialogueManager::GetText()
 {
+	m_text = sf::Text();
+	m_textVect = vector<sf::Text>();
+	m_selected = 0;
+	m_selectorY = 605;
+
 	for (int i = 0; i < m_dialogueObject.second.size(); i++)
 	{
 		if (m_dialogueObject.second.at(i).m_id == m_path)
 		{
 			m_text.setString(m_dialogueObject.second.at(i).m_Question.m_Text);
-			m_text.setCharacterSize(30);
+			m_text.setCharacterSize(36);
 			m_text.setFont(m_font);
 			m_text.setFillColor(sf::Color(9, 150, 18, 255));
+			
+			m_maxSelections = m_dialogueObject.second.at(i).m_Answers.size() - 1;
 
 			for (int j = 0; j < m_dialogueObject.second.at(i).m_Answers.size(); j++)
 			{
@@ -88,7 +124,7 @@ void DialogueManager::GetText()
 	for (int k = 0; k < m_textVect.size(); k++)
 	{
 		m_textVect.at(k).setFont(m_font);
-		m_textVect.at(k).setCharacterSize(25);
+		m_textVect.at(k).setCharacterSize(30);
 		m_textVect.at(k).setFillColor(sf::Color::Black);
 	}
 }

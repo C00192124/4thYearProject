@@ -58,6 +58,15 @@ vector<int> JSONReader::loadTraits()
 	return v;
 }
 
+string JSONReader::loadName()
+{
+	string name("name");
+	wstring wName;
+	wName.assign(name.begin(), name.end());
+	string s(m_object[wName]->AsString().begin(), m_object[wName]->AsString().end());
+	return s;
+}
+
 string JSONReader::loadSprite()
 {
 	string sprite("sprite");

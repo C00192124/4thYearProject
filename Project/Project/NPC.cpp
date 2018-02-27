@@ -5,11 +5,13 @@ void NPC::Init(string jsonFile)
 	m_jR = JSONReader(jsonFile);
 	m_traits = m_jR.loadTraits();
 	m_spriteFile = m_jR.loadSprite();
+	m_name = m_jR.loadName();
 	m_tM = TraitManager(m_traits);
-	m_dM.Init(m_jR);
+	m_dM.Init(m_jR, m_name);
 	m_texture.loadFromFile(m_spriteFile);
 	m_sprite.setTexture(m_texture);
 	m_sprite.setPosition(300, 300);
+	m_sprite.setTextureRect(sf::IntRect(0, 0, 64, 64));
 	m_speaking = false;
 	m_speakTimer = 0;
 }
@@ -29,16 +31,25 @@ void NPC::Update(sf::Sprite &s, InputManager *i)
 	else
 	{
 		m_speakTimer++;
-		if (i->up && m_speakTimer > 20)
+		if (m_speakTimer > 10)
 		{
-			m_dM.MoveUp();
-			m_speakTimer = 0;
+			if (i->up)
+			{
+				m_dM.MoveUp();
+				m_speakTimer = 0;
+			}
+			else if (i->down)
+			{
+				m_dM.MoveDown();
+				m_speakTimer = 0;
+			}
+			else if (i->enter)
+			{
+				m_dM.Select();
+				m_speakTimer = 0;
+			}
 		}
-		else if (i->down && m_speakTimer > 20)
-		{
-			m_dM.MoveDown();
-			m_speakTimer = 0;
-		}
+		m_speaking = m_dM.isSpeaking();
 	}
 }
 

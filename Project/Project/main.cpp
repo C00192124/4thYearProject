@@ -26,9 +26,9 @@ void main()
 	Player player;
 
 	vector<NPC> characters;
-	NPC test;
-	test.Init("Resources/JSON/character1.json");
-	characters.push_back(test);
+	NPC KevinLionetti;
+	KevinLionetti.Init("Resources/JSON/kevinlionetti.json");
+	characters.push_back(KevinLionetti);
 
 	while (window.isOpen())
 	{
