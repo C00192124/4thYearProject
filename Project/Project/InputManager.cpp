@@ -5,14 +5,14 @@ InputManager::InputManager(sf::Event e)
 	m_event = e;
 }
 
-void InputManager::CheckInput(sf::RenderWindow &w)
+void InputManager::CheckInput(sf::RenderWindow &win)
 {
-	while (w.pollEvent(m_event))
+	while (win.pollEvent(m_event))
 	{
 		switch (m_event.type)
 		{
 		case sf::Event::Closed:
-			w.close();
+			win.close();
 			break;
 
 		case sf::Event::KeyPressed:
@@ -28,6 +28,14 @@ void InputManager::CheckInput(sf::RenderWindow &w)
 				space = true;
 			if (m_event.key.code == sf::Keyboard::Return)
 				enter = true;
+			if (m_event.key.code == sf::Keyboard::A)
+				a = true;
+			if (m_event.key.code == sf::Keyboard::S)
+				s = true;
+			if (m_event.key.code == sf::Keyboard::D)
+				d = true;
+			if (m_event.key.code == sf::Keyboard::W)
+				w = true;
 			break;
 
 		case sf::Event::KeyReleased:
@@ -44,6 +52,14 @@ void InputManager::CheckInput(sf::RenderWindow &w)
 				space = false;
 			if (m_event.key.code == sf::Keyboard::Return)
 				enter = false;
+			if (m_event.key.code == sf::Keyboard::A)
+				a = false;
+			if (m_event.key.code == sf::Keyboard::S)
+				s = false;
+			if (m_event.key.code == sf::Keyboard::D)
+				d = false;
+			if (m_event.key.code == sf::Keyboard::W)
+				w = false;
 			break;
 
 		default:

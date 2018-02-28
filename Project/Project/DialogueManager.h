@@ -25,6 +25,7 @@ private:
 	void PrintObject();
 	void GetText();
 	sf::Vector2f getPixelCoords(int x, int y, sf::RenderWindow &w);
+	string SetString(string s, int width);
 
 	sf::Font m_font;
 	string m_previousPath;

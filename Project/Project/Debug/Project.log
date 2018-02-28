@@ -1,6 +1,13 @@
-﻿  main.cpp
-c:\users\gameuser\desktop\project\project\project\main.cpp(19): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-c:\users\gameuser\desktop\project\project\project\main.cpp(52): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\desktop\project\project\project\main.cpp(69): warning C4018: '<': signed/unsigned mismatch
+﻿  DialogueManager.cpp
+c:\users\gameuser\desktop\project\project\project\dialoguemanager.cpp(40): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\dialoguemanager.cpp(57): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\dialoguemanager.cpp(71): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\dialoguemanager.cpp(102): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\dialoguemanager.cpp(142): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\dialoguemanager.cpp(153): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\dialoguemanager.cpp(161): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\dialoguemanager.cpp(176): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\dialoguemanager.cpp(181): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\project\project\project\dialoguemanager.cpp(190): warning C4018: '<': signed/unsigned mismatch
   Project.vcxproj -> C:\Users\gameuser\Desktop\Project\Project\Debug\Project.exe
   Project.vcxproj -> C:\Users\gameuser\Desktop\Project\Project\Debug\Project.pdb (Partial PDB)

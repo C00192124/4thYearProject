@@ -14,25 +14,25 @@ void Player::Update(InputManager *i, vector<NPC> &n, World &w)
 {
 	camera.setCenter(m_sprite.getPosition().x, m_sprite.getPosition().y);
 
-	if (i->down) {
+	if (i->s) {
 		m_dir = Down;
 		m_sprite.move(0, 2.5);
 	}
-	else if (i->up) {
+	else if (i->w) {
 		m_dir = Up;
 		m_sprite.move(0, -2.5);
 	}
-	else if (i->left) {
+	else if (i->a) {
 		m_dir = Left;
 		m_sprite.move(-2.5, 0);
 	}
-	else if (i->right) {
+	else if (i->d) {
 		m_dir = Right;
 		m_sprite.move(2.5, 0);
 	}
 	
 	//Animation
-	if (i->up || i->down || i->left || i->right)
+	if (i->w || i->s || i->a || i->d)
 	{
 		time = clock.getElapsedTime();
 		if (time.asMilliseconds() >= 250)
@@ -65,7 +65,7 @@ void Player::SpriteCollision(sf::Sprite &s)
 		{
 			m_sprite.move(-2.5, 0);
 		}
-		if (m_dir == Left)
+		else if (m_dir == Left)
 		{
 			m_sprite.move(2.5, 0);
 		}
@@ -73,7 +73,7 @@ void Player::SpriteCollision(sf::Sprite &s)
 		{
 			m_sprite.move(0, 2.5);
 		}
-		if (m_dir == Down)
+		else if (m_dir == Down)
 		{
 			m_sprite.move(0, -2.5);
 		}

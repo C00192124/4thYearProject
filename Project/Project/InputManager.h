@@ -13,6 +13,10 @@ public:
 	bool right = false;
 	bool space = false;
 	bool enter = false;
+	bool w = false;
+	bool a = false;
+	bool s = false;
+	bool d = false;
 
 private:
 	sf::Event m_event;
