@@ -10,7 +10,7 @@ Player::Player()
 	camera = sf::View(sf::FloatRect(0, 0, 1024, 768));
 }
 
-void Player::Update(InputManager *i, vector<NPC> &n, World &w)
+void Player::Update(InputManager *i, vector<NPC> &n)
 {
 	camera.setCenter(m_sprite.getPosition().x, m_sprite.getPosition().y);
 
@@ -49,7 +49,7 @@ void Player::Update(InputManager *i, vector<NPC> &n, World &w)
 	{
 		SpriteCollision(n.at(z).m_sprite);
 	}
-	WorldCollision(w);
+	WorldCollision();
 }
 
 void Player::Render(sf::RenderWindow &w)
@@ -80,36 +80,34 @@ void Player::SpriteCollision(sf::Sprite &s)
 	}
 }
 
-void Player::WorldCollision(World &w)
+void Player::WorldCollision()
 {
-	for (int i = 0; i < 32; i++)
+	/*for (int i = 0; i < w.size(); i++)
 	{
-		for (int j = 0; j < 24; j++)
+		if (!w.at(i).getPassable())
 		{
-			if (w.m_world[j][i] == 2 || w.m_world[j][i] == 3 || w.m_world[j][i] == 4 || w.m_world[j][i] == 5 || w.m_world[j][i] == 10)
+			if (CalculateCollision(w.at(i).m_sprite.getPosition().x, w.at(i).m_sprite.getLocalBounds().width,
+				w.at(i).m_sprite.getPosition().y, w.at(i).m_sprite.getLocalBounds().height))
 			{
-				if (CalculateCollision(i * 64, (i * 64) + 64, j * 64, (j * 64) + 64))
+				if (m_dir == Right)
 				{
-					if (m_dir == Right)
-					{
-						m_sprite.move(-2.5, 0);
-					}
-					if (m_dir == Left)
-					{
-						m_sprite.move(2.5, 0);
-					}
-					if (m_dir == Up)
-					{
-						m_sprite.move(0, 2.5);
-					}
-					if (m_dir == Down)
-					{
-						m_sprite.move(0, -2.5);
-					}
+					m_sprite.move(-2.5, 0);
+				}
+				if (m_dir == Left)
+				{
+					m_sprite.move(2.5, 0);
+				}
+				if (m_dir == Up)
+				{
+					m_sprite.move(0, 2.5);
+				}
+				if (m_dir == Down)
+				{
+					m_sprite.move(0, -2.5);
 				}
 			}
 		}
-	}
+	}*/
 }
 
 bool Player::CalculateCollision(float x, float width, float y, float height)

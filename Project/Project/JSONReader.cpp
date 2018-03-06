@@ -71,6 +71,109 @@ string JSONReader::loadSprite()
 	return s;
 }
 
+vector<vector<string>> JSONReader::loadWorld()
+{
+	vector<vector<string>> world;
+
+	string cabin("cabin");
+	wstring wCabin;
+	wCabin.assign(cabin.begin(), cabin.end());
+	JSONArray cabinArray = m_object[wCabin]->AsArray();
+	
+	for (int i = 0; i < cabinArray.size(); i++)
+	{
+		vector<string> temp;
+		JSONArray c = cabinArray[i]->AsArray();
+		for (int j = 0; j < c.size(); j++)
+		{
+			string s(c[j]->AsString().begin(), c[j]->AsString().end());
+			temp.push_back(s);
+		}
+		world.push_back(temp);
+	}
+
+	return world;
+}
+
+vector<WorldObject> JSONReader::getWorldObject(JSONArray jA)
+{
+	vector<WorldObject> wObj;
+	WorldObject w;
+
+	for (int i = 0; i < jA.size(); i++)
+	{
+
+		JSONObject o = jA[i]->AsObject();
+
+		string id("id");
+		wstring wId;
+		wId.assign(id.begin(), id.end());
+		string s(o[wId]->AsString().begin(), o[wId]->AsString().end());
+		w.setID(s);
+
+		string path("path");
+		wstring wPath;
+		wPath.assign(path.begin(), path.end());
+		string st(o[wPath]->AsString().begin(), o[wPath]->AsString().end());
+		w.setPath(st);
+
+		string pass("passable");
+		wstring wPass;
+		wPass.assign(pass.begin(), pass.end());
+		bool b = o[wPass]->AsBool();
+		w.setPassable(b);
+
+		wObj.push_back(w);
+
+	}
+
+	return wObj;
+}
+
+vector<WorldObject> JSONReader::loadWorldObjects()
+{
+	vector<WorldObject> worldObj;
+	vector<WorldObject> w;
+
+	string objects("objects");
+	wstring wObjects;
+	wObjects.assign(objects.begin(), objects.end());
+	JSONObject objectObj = m_object[wObjects]->AsObject();
+
+	string floors("floors");
+	wstring wFloors;
+	wFloors.assign(floors.begin(), floors.end());
+	JSONArray floorArray = objectObj[wFloors]->AsArray();
+	w = getWorldObject(floorArray);
+	for (int i = 0; i < w.size(); i++)
+	{
+		worldObj.push_back(w.at(i));
+	}
+
+	string walls("walls");
+	wstring wWalls;
+	wWalls.assign(walls.begin(), walls.end());
+	JSONArray wallArray = objectObj[wWalls]->AsArray();
+	w = getWorldObject(wallArray);
+	for (int j = 0; j < w.size(); j++)
+	{
+		worldObj.push_back(w.at(j));
+	}
+
+	string furniture("furniture");
+	wstring wFurniture;
+	wFurniture.assign(furniture.begin(), furniture.end());
+	JSONArray furnitureArray = objectObj[wFurniture]->AsArray();
+	w = getWorldObject(furnitureArray);
+	for (int k = 0; k < w.size(); k++)
+	{
+		worldObj.push_back(w.at(k));
+	}
+	
+	return worldObj;
+
+}
+
 pair<vector<Threshold>,vector<Dialogue>> JSONReader::loadDialogue()
 {
 	vector<Dialogue> dialogueVector;

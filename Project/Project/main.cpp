@@ -6,6 +6,7 @@
 #include "SoundManager.h"
 #include "GameState.h"
 #include "Menu.h"
+#include "JSONReader.h"
 
 sf::Event event;
 
@@ -47,7 +48,7 @@ void main()
 			bool temp = characters.at(0).m_speaking;
 			if (!temp)
 			{
-				player.Update(input, characters, world);
+				player.Update(input, characters);
 			}
 			for (int i = 0; i < characters.size(); i++)
 			{

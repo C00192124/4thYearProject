@@ -5,6 +5,7 @@
 #include <fstream>
 #include <iostream>
 #include "Dialogue.h"
+#include "WorldObject.h"
 
 using namespace std;
 
@@ -17,6 +18,8 @@ public:
 	void Init(std::string const & filename);
 	vector<int> loadTraits();
 	pair<vector<Threshold>, vector<Dialogue>> loadDialogue();
+	vector<vector<string>> loadWorld();
+	vector<WorldObject> loadWorldObjects();
 	string loadSprite();
 	string loadName();
 
@@ -25,6 +28,7 @@ private:
 	std::string m_JSONData;
 	JSONObject m_object;
 
+	vector<WorldObject> getWorldObject(JSONArray jA);
 	void loadJSONData(std::string const & filename);
 
 };

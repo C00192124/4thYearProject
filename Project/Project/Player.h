@@ -1,6 +1,6 @@
 #pragma once
 #include "Sprite.h"
-#include "World.h"
+#include "WorldObject.h"
 #include "NPC.h"
 #include <iostream>
 
@@ -11,7 +11,7 @@ public:
 	~Player();
 
 	enum Direction { Down, Left, Right, Up };
-	void Update(InputManager *i, vector<NPC> &n, World &w);
+	void Update(InputManager *i, vector<NPC> &n);
 	void Render(sf::RenderWindow &w);
 	sf::View GetView();
 
@@ -24,6 +24,6 @@ private:
 
 	bool CalculateCollision(float x, float width, float y, float height);
 	void SpriteCollision(sf::Sprite &s);
-	void WorldCollision(World &w);
+	void WorldCollision();
 	
 };
