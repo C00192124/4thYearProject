@@ -7,21 +7,16 @@ class WorldObject
 {
 public:
 	WorldObject() {}
+	WorldObject(string id, string p, bool pass) { m_id = id; m_path = p; m_pass = pass; }
 	~WorldObject() {}
-
-	void setID(string id) { m_id = id; };
-	void setPath(string p) { m_path = p; }
-	void setPassable(bool p) { m_pass = p; }
 
 	string getID() { return m_id; }
 	string getPath() { return m_path; }
-	bool getPassable() { return m_pass; }
-
-	sf::Sprite m_sprite;
-	sf::Texture m_texture;
+	bool getPass() { return m_pass; }
 
 private:
 	string m_id;
 	string m_path;
 	bool m_pass;
+
 };

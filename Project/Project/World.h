@@ -9,15 +9,17 @@ public:
 	World();
 	~World();
 	void Render(sf::RenderWindow &w);
-
-	vector<WorldObject> getWorld() { return world; }
+	vector<sf::IntRect> getWorld();
 
 private:
 
 	JSONReader m_jR;
-	vector<vector<string>> worldID;
 	vector<WorldObject> worldObj;
-	vector<WorldObject> world;
+	vector<vector<string>> worldID;
+	vector<sf::Sprite> worldSprite;
+	vector<sf::Texture> worldTexture;
+	vector<sf::IntRect> collisionRects;
+	int index;
 
 };
 

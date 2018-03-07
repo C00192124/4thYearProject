@@ -7,7 +7,8 @@
 class Player : public Sprite
 {
 public:
-	Player();
+	Player() {}
+	Player(vector<sf::IntRect> w);
 	~Player();
 
 	enum Direction { Down, Left, Right, Up };
@@ -21,6 +22,7 @@ private:
 	sf::Clock clock;
 	sf::Time time;
 	sf::View camera;
+	vector<sf::IntRect> m_world;
 
 	bool CalculateCollision(float x, float width, float y, float height);
 	void SpriteCollision(sf::Sprite &s);

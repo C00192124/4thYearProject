@@ -109,20 +109,18 @@ vector<WorldObject> JSONReader::getWorldObject(JSONArray jA)
 		wstring wId;
 		wId.assign(id.begin(), id.end());
 		string s(o[wId]->AsString().begin(), o[wId]->AsString().end());
-		w.setID(s);
 
 		string path("path");
 		wstring wPath;
 		wPath.assign(path.begin(), path.end());
 		string st(o[wPath]->AsString().begin(), o[wPath]->AsString().end());
-		w.setPath(st);
 
 		string pass("passable");
 		wstring wPass;
 		wPass.assign(pass.begin(), pass.end());
 		bool b = o[wPass]->AsBool();
-		w.setPassable(b);
 
+		w = WorldObject(s, st, b);
 		wObj.push_back(w);
 
 	}

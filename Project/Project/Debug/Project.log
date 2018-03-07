@@ -1,9 +1,7 @@
-﻿  World.cpp
-c:\users\gameuser\desktop\4thyearproject\project\project\world.cpp(10): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\desktop\4thyearproject\project\project\world.cpp(16): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\desktop\4thyearproject\project\project\world.cpp(18): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\desktop\4thyearproject\project\project\world.cpp(20): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\desktop\4thyearproject\project\project\world.cpp(25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\gameuser\desktop\4thyearproject\project\project\world.cpp(37): warning C4018: '<': signed/unsigned mismatch
+﻿  Player.cpp
+c:\users\gameuser\desktop\4thyearproject\project\project\player.cpp(42): warning C4018: '>=': signed/unsigned mismatch
+c:\users\gameuser\desktop\4thyearproject\project\project\player.cpp(49): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\4thyearproject\project\project\player.cpp(86): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\4thyearproject\project\project\player.cpp(89): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Project.vcxproj -> C:\Users\gameuser\Desktop\4thYearProject\Project\Debug\Project.exe
   Project.vcxproj -> C:\Users\gameuser\Desktop\4thYearProject\Project\Debug\Project.pdb (Partial PDB)

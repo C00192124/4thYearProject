@@ -24,11 +24,11 @@ void main()
 	Menu menu(windowWidth, windowHeight, input);
 	SoundManager sound;
 	World world;
-	Player player;
+	Player player(world.getWorld());
 
 	vector<NPC> characters;
 	NPC KevinLionetti;
-	KevinLionetti.Init("Resources/JSON/kevinlionetti.json", sf::Vector2f(400,300));
+	KevinLionetti.Init("Resources/JSON/kevinlionetti.json", sf::Vector2f(6*64,2*64));
 	NPC ThomasSteinkeller;
 	ThomasSteinkeller.Init("Resources/JSON/thomassteinkeller.json", sf::Vector2f(200, 300));
 	characters.push_back(KevinLionetti);
