@@ -121,10 +121,37 @@
       }
     },
     "q3": {
-      "qtext": "My wife can, now get away from me!",
+      "qtext": "My wife can, she will tell you everything.",
       "ans": {
         "a0": {
-          "text": "Sorry.",
+          "text": "Where can I find her?",
+          "path": "q4",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "Okay, thanks for the help.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q4": {
+      "qtext": "I dunno, I'm done with this conversation! If you have any evidence then accuse me, if not get out of my sight!",
+      "ans": {
+        "a0": {
+          "text": "Sorry, I'll be on my way.",
           "path": "exit",
           "deltas": {
             "t0": 0,
