@@ -4,7 +4,7 @@ Player::Player(vector<sf::IntRect> w)
 {
 	m_texture.loadFromFile("Resources/Sprites/player.png");
 	m_sprite.setTexture(m_texture);
-	m_sprite.setPosition(150, 900);
+	m_sprite.setPosition(6*64, 18*64);
 	m_dir = Down;
 	m_sprite.setTextureRect(sf::IntRect(0, m_dir * 64, 64, 64));
 	camera = sf::View(sf::FloatRect(0, 0, 1024, 768));

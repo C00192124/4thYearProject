@@ -59,7 +59,7 @@
       "qtext": "Don't be stupid boy!",
       "ans": {
         "a0": {
-          "text": "Sorry, I shouldn't have been so forward.",
+          "text": "Sorry, I didn't mean to offend.",
           "path": "q0",
           "deltas": {
             "t0": 10,
@@ -148,11 +148,11 @@
       }
     },
     "q4": {
-      "qtext": "Nothing at all now leave me be boy!",
+      "qtext": "Nothing at all! But if you want my humble opinion boy, that Kevin fellow is awful suspicious.",
       "ans": {
         "a0": {
-          "text": "Sorry.",
-          "path": "exit",
+          "text": "What makes you say that?",
+          "path": "q5",
           "deltas": {
             "t0": 0,
             "t1": 0,
@@ -160,9 +160,73 @@
             "t3": 10,
             "t4": 0
           }
+        },
+        "a1": {
+          "text": "Why so quick to put the blame on somebody else?",
+          "path": "q5",
+          "deltas": {
+            "t0": -10,
+            "t1": 0,
+            "t2": 0,
+            "t3": -5,
+            "t4": 0
+          }
+        },
+        "a2": {
+          "text": "Thanks for the help.",
+          "path": "exit",
+          "deltas": {
+            "t0": -10,
+            "t1": 0,
+            "t2": 0,
+            "t3": -5,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q5": {
+      "qtext": "Just I know a thing or two about those Mafia folk, none of it good.",
+      "ans": {
+        "a0": {
+          "text": "I'm not so sure it should be him I'm worrying about!",
+          "path": "q6",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 10,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "Okay, thanks for the help Thomas.",
+          "path": "exit",
+          "deltas": {
+            "t0": -10,
+            "t1": 0,
+            "t2": 0,
+            "t3": -5,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q6": {
+      "qtext": "This is pointless, do your job boy and leave me alone!",
+      "ans": {
+        "a0": {
+          "text": "I think that concludes our talk!",
+          "path": "exit",
+          "deltas": {
+            "t0": -10,
+            "t1": 0,
+            "t2": 0,
+            "t3": -5,
+            "t4": 0
+          }
         }
       }
     }
   }
 }
-
