@@ -17,7 +17,7 @@ void NPC::Init(string jsonFile, sf::Vector2f pos)
 	m_speakTimer = 0;
 }
 
-void NPC::Update(sf::Sprite &s, InputManager *i)
+void NPC::Update(sf::Sprite &s, InputManager *i, sf::RenderWindow &w)
 {
 	if (!m_speaking)
 	{
@@ -51,7 +51,9 @@ void NPC::Update(sf::Sprite &s, InputManager *i)
 			}
 		}
 		m_speaking = m_dM.isSpeaking();
+		m_tM.Update(w);
 	}
+
 }
 
 void NPC::Render(sf::RenderWindow &w)
@@ -60,6 +62,7 @@ void NPC::Render(sf::RenderWindow &w)
 	if (m_speaking)
 	{
 		m_dM.Render(w);
+		m_tM.Render(w);
 	}
 }
 

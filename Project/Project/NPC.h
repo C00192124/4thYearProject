@@ -13,7 +13,7 @@ public:
 	~NPC() {};
 
 	void Init(string jsonFile, sf::Vector2f pos);
-	void Update(sf::Sprite &s, InputManager *i);
+	void Update(sf::Sprite &s, InputManager *i, sf::RenderWindow &w);
 	void Render(sf::RenderWindow &w);
 
 	bool m_speaking;

@@ -1,7 +1,8 @@
-﻿  Player.cpp
-c:\users\gameuser\desktop\4thyearproject\project\project\player.cpp(42): warning C4018: '>=': signed/unsigned mismatch
-c:\users\gameuser\desktop\4thyearproject\project\project\player.cpp(49): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\desktop\4thyearproject\project\project\player.cpp(86): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\desktop\4thyearproject\project\project\player.cpp(89): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿  BarChart.cpp
+c:\users\gameuser\desktop\4thyearproject\project\project\barchart.cpp(5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\4thyearproject\project\project\barchart.cpp(6): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\4thyearproject\project\project\barchart.cpp(21): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\4thyearproject\project\project\barchart.cpp(23): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\gameuser\desktop\4thyearproject\project\project\barchart.cpp(47): warning C4018: '<': signed/unsigned mismatch
   Project.vcxproj -> C:\Users\gameuser\Desktop\4thYearProject\Project\Debug\Project.exe
   Project.vcxproj -> C:\Users\gameuser\Desktop\4thYearProject\Project\Debug\Project.pdb (Partial PDB)

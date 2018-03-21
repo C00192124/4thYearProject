@@ -9,6 +9,12 @@ TraitManager::TraitManager(vector<int> traits)
 	extroversion = traits.at(2);
 	agreeableness = traits.at(3);
 	neuroticism = traits.at(4);
+	m_chart = BarChart(914, 10);
+	m_chart.AddBar(openness, sf::Color::Blue, "Openness");
+	m_chart.AddBar(conscientious, sf::Color::Yellow, "Conscientious");
+	m_chart.AddBar(extroversion, sf::Color::Green, "Extroversion");
+	m_chart.AddBar(agreeableness, sf::Color::Red, "Agreeableness");
+	m_chart.AddBar(neuroticism, sf::Color::White, "Neuroticism");
 }
 
 vector<int> TraitManager::GetTraits()
@@ -20,6 +26,16 @@ vector<int> TraitManager::GetTraits()
 	traits.push_back(agreeableness);
 	traits.push_back(neuroticism);
 	return traits;
+}
+
+void TraitManager::Update(sf::RenderWindow &w)
+{
+	m_chart.Update(w, GetTraits());
+}
+
+void TraitManager::Render(sf::RenderWindow &w)
+{
+	m_chart.Render(w);
 }
 
 void TraitManager::AddOpenness(int x) { openness + x; }

@@ -119,6 +119,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BarChart.cpp" />
     <ClCompile Include="DialogueManager.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="JSONReader.cpp" />
@@ -133,6 +134,7 @@
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BarChart.h" />
     <ClInclude Include="Dialogue.h" />
     <ClInclude Include="DialogueManager.h" />
     <ClInclude Include="GameState.h" />

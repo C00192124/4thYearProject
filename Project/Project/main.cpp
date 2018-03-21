@@ -52,7 +52,7 @@ void main()
 			}
 			for (int i = 0; i < characters.size(); i++)
 			{
-				characters.at(i).Update(player.m_sprite, input);
+				characters.at(i).Update(player.m_sprite, input, window);
 			}
 		}
 		else

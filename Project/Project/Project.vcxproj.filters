@@ -51,6 +51,9 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BarChart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sprite.h">
@@ -96,6 +99,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="WorldObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BarChart.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

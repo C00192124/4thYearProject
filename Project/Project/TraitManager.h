@@ -2,6 +2,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "BarChart.h"
+
 using namespace std;
 
 class TraitManager
@@ -9,8 +11,11 @@ class TraitManager
 public:
 	TraitManager();
 	TraitManager(vector<int> traits);
-	vector<int> GetTraits();
 	~TraitManager();
+
+	vector<int> GetTraits();
+	void Update(sf::RenderWindow &w);
+	void Render(sf::RenderWindow &w);
 
 private:
 	int openness;
@@ -18,6 +23,8 @@ private:
 	int extroversion;
 	int agreeableness;
 	int neuroticism;
+
+	BarChart m_chart;
 
 	void AddOpenness(int x);
 	void SubOpenness(int x);

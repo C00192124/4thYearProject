@@ -2,11 +2,11 @@
   "name": "Thomas Steinkeller",
   "sprite": "Resources/Sprites/ThomasSteinkeller.png",
   "traits": {
-    "t0": "70",
-    "t1": "65",
+    "t0": "50",
+    "t1": "10",
     "t2": "75",
-    "t3": "70",
-    "t4": "30"
+    "t3": "65",
+    "t4": "60"
   },
   "thresholds": {
     "tr0": {
