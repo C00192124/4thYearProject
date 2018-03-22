@@ -10,9 +10,9 @@ class BarChart
 public:
 
 	BarChart() {}
-	BarChart(int xPos, int yPos);
 	~BarChart() {}
 
+	void Init(int xPos, int yPos);
 	void AddBar(int value, sf::Color color, string name);
 	void Update(sf::RenderWindow &w, vector<int> traits);
 	void Render(sf::RenderWindow &w);

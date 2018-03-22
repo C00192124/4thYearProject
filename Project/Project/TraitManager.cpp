@@ -9,7 +9,7 @@ TraitManager::TraitManager(vector<int> traits)
 	extroversion = traits.at(2);
 	agreeableness = traits.at(3);
 	neuroticism = traits.at(4);
-	m_chart = BarChart(914, 10);
+	m_chart.Init(814, 10);
 	m_chart.AddBar(openness, sf::Color::Blue, "Openness");
 	m_chart.AddBar(conscientious, sf::Color::Yellow, "Conscientious");
 	m_chart.AddBar(extroversion, sf::Color::Green, "Extroversion");

@@ -1,27 +1,25 @@
 #include "BarChart.h"
 
-BarChart::BarChart(int xPos, int yPos)
+void BarChart::Init(int xPos, int yPos)
 {
 	m_position.x = xPos;
 	m_position.y = yPos;
 	m_outline.setOutlineThickness(2);
 	m_outline.setOutlineColor(sf::Color::Magenta);
-	m_outline.setSize(sf::Vector2f(100, 100));
+	m_outline.setSize(sf::Vector2f(200, 200));
 	m_outline.setFillColor(sf::Color::Black);
 	m_font.loadFromFile("Resources/arial.ttf");
-	m_chartInfo.setCharacterSize(32);
-	m_chartInfo.setFillColor(sf::Color::Cyan);
-	m_chartInfo.setFont(m_font);
 }
 
 void BarChart::AddBar(int value, sf::Color color, string name)
 {
 	sf::RectangleShape rS;
 	rS.setFillColor(color);
-	rS.setSize(sf::Vector2f(20, value));
+	rS.setSize(sf::Vector2f(40, value*2));
 	m_barChart.push_back(rS);
-	m_outline.setSize(sf::Vector2f(m_barChart.size() * 20, 100));
+	m_outline.setSize(sf::Vector2f(m_barChart.size() * 40, 200));
 	m_info.append(name + ": " + to_string(value) + "\n");
+	m_chartInfo.setString(sf::String(m_info));
 	cout << m_info << endl;
 }
 
@@ -35,8 +33,6 @@ void BarChart::Update(sf::RenderWindow &w, vector<int> traits)
 		drawInfo = true;
 	}
 	else drawInfo = false;
-
-	m_chartInfo.setString(m_info);
 }
 
 void BarChart::Render(sf::RenderWindow &w)
@@ -46,13 +42,16 @@ void BarChart::Render(sf::RenderWindow &w)
 	
 	for (int i = 0; i < m_barChart.size(); i++)
 	{
-		m_barChart.at(i).setPosition(w.mapPixelToCoords(sf::Vector2i(sf::Vector2f((m_position.x + (i * 20)), (m_position.y + (100 - m_barChart.at(i).getLocalBounds().height))))));
+		m_barChart.at(i).setPosition(w.mapPixelToCoords(sf::Vector2i(sf::Vector2f((m_position.x + (i * 40)), (m_position.y + (200 - m_barChart.at(i).getLocalBounds().height))))));
 		w.draw(m_barChart.at(i));
 	}
 	
 	if (drawInfo)
 	{
-		m_chartInfo.setPosition(m_position.x, m_position.y + 100);
+		m_chartInfo.setFont(m_font);
+		m_chartInfo.setCharacterSize(22);
+		m_chartInfo.setFillColor(sf::Color::Cyan);
+		m_chartInfo.setPosition(w.mapPixelToCoords(sf::Vector2i(sf::Vector2f(m_position.x, m_position.y + 200))));
 		w.draw(m_chartInfo);
 	}
 }
