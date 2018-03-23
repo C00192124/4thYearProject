@@ -1,7 +1,5 @@
 #include "TraitManager.h"
 
-TraitManager::TraitManager() {}
-
 TraitManager::TraitManager(vector<int> traits)
 {
 	openness = traits.at(0);
@@ -28,6 +26,15 @@ vector<int> TraitManager::GetTraits()
 	return traits;
 }
 
+void TraitManager::UpdateTraits(int o, int c, int e, int a, int n)
+{
+	openness += o;
+	conscientious += c;
+	extroversion += e;
+	agreeableness += a;
+	neuroticism += n;
+}
+
 void TraitManager::Update(sf::RenderWindow &w)
 {
 	m_chart.Update(w, GetTraits());
@@ -37,25 +44,3 @@ void TraitManager::Render(sf::RenderWindow &w)
 {
 	m_chart.Render(w);
 }
-
-void TraitManager::AddOpenness(int x) { openness + x; }
-
-void TraitManager::SubOpenness(int x) { openness - x; }
-
-void TraitManager::AddConscientious(int x) { conscientious + x; }
-
-void TraitManager::SubConscientious(int x) { conscientious - x; }
-
-void TraitManager::AddExtroversion(int x) { extroversion + x; }
-
-void TraitManager::SubExtroversion(int x) { extroversion - x; }
-
-void TraitManager::AddAgreeableness(int x) { agreeableness + x; }
-
-void TraitManager::SubAgreeableness(int x) { agreeableness - x; }
-
-void TraitManager::AddNeuroticism(int x) { neuroticism + x; }
-
-void TraitManager::SubNeuroticism(int x) { neuroticism - x; }
-
-TraitManager::~TraitManager() {}

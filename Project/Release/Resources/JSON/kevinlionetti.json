@@ -1,0 +1,168 @@
+{
+  "name": "Kevin Lionetti",
+  "sprite": "Resources/Sprites/KevinLionetti.png",
+  "traits": {
+    "t0": "70",
+    "t1": "65",
+    "t2": "75",
+    "t3": "70",
+    "t4": "30"
+  },
+  "thresholds": {
+    "tr0": {
+      "trait": "t0",
+      "value": 20,
+      "condition": "below",
+      "path": "q3"
+    }
+  },
+  "dialogue": {
+    "q0": {
+      "qtext": "Hello, what can I do you for?",
+      "ans": {
+        "a0": {
+          "text": "Did you kill her?",
+          "path": "q1",
+          "deltas": {
+            "t0": -10,
+            "t1": 0,
+            "t2": 0,
+            "t3": -5,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "Where were you last night?",
+          "path": "q2",
+          "deltas": {
+            "t0": 5,
+            "t1": 0,
+            "t2": 0,
+            "t3": 10,
+            "t4": 0
+          }
+        },
+        "a2": {
+          "text": "Nevermind, Goodbye.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q1": {
+      "qtext": "Are you crazy?",
+      "ans": {
+        "a0": {
+          "text": "Sorry, I shouldn't have been so forward.",
+          "path": "q0",
+          "deltas": {
+            "t0": 10,
+            "t1": 0,
+            "t2": 0,
+            "t3": 10,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "Nevermind, Goodbye.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q2": {
+      "qtext": "I spent the night in my room.",
+      "ans": {
+        "a0": {
+          "text": "Can somebody confirm this?",
+          "path": "q3",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 10,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "Did you kill her?",
+          "path": "q1",
+          "deltas": {
+            "t0": -10,
+            "t1": 0,
+            "t2": 0,
+            "t3": -5,
+            "t4": 0
+          }
+        },
+        "a2": {
+          "text": "Nevermind, Goodbye",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q3": {
+      "qtext": "My wife can, she will tell you everything.",
+      "ans": {
+        "a0": {
+          "text": "Where can I find her?",
+          "path": "q4",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "Okay, thanks for the help.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q4": {
+      "qtext": "I dunno, I'm done with this conversation! If you have any evidence then accuse me, if not get out of my sight!",
+      "ans": {
+        "a0": {
+          "text": "Sorry, I'll be on my way.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    }
+  }
+}
+

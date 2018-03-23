@@ -1,34 +1,4 @@
-﻿  DialogueManager.cpp
-DialogueManager.cpp(40): warning C4018: '<': signed/unsigned mismatch
-DialogueManager.cpp(57): warning C4018: '<': signed/unsigned mismatch
-DialogueManager.cpp(71): warning C4018: '<': signed/unsigned mismatch
-DialogueManager.cpp(102): warning C4018: '<': signed/unsigned mismatch
-DialogueManager.cpp(142): warning C4018: '<': signed/unsigned mismatch
-DialogueManager.cpp(153): warning C4018: '<': signed/unsigned mismatch
-DialogueManager.cpp(161): warning C4018: '<': signed/unsigned mismatch
-DialogueManager.cpp(176): warning C4018: '<': signed/unsigned mismatch
-DialogueManager.cpp(181): warning C4018: '<': signed/unsigned mismatch
-DialogueManager.cpp(190): warning C4018: '<': signed/unsigned mismatch
-  JSONReader.cpp
-JSONReader.cpp(44): warning C4018: '<': signed/unsigned mismatch
-JSONReader.cpp(93): warning C4018: '<': signed/unsigned mismatch
-JSONReader.cpp(112): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-JSONReader.cpp(135): warning C4018: '<': signed/unsigned mismatch
-JSONReader.cpp(156): warning C4018: '<': signed/unsigned mismatch
-JSONReader.cpp(181): warning C4018: '<': signed/unsigned mismatch
-JSONReader.cpp(186): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  NPC.cpp
-  Player.cpp
-Player.cpp(41): warning C4018: '>=': signed/unsigned mismatch
-Player.cpp(48): warning C4018: '<': signed/unsigned mismatch
-Player.cpp(91): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  main.cpp
-main.cpp(19): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-main.cpp(52): warning C4018: '<': signed/unsigned mismatch
-main.cpp(69): warning C4018: '<': signed/unsigned mismatch
-  Generating code
-  54 of 1357 functions ( 4.0%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    51 functions had inline decision re-evaluated but remain unchanged
+﻿  Generating code
+  All 1974 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   Project.vcxproj -> C:\Users\gameuser\Desktop\4thYearProject\Project\Release\Project.exe
