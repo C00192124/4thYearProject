@@ -1,7 +1,8 @@
 #include "DialogueManager.h"
 
-void DialogueManager::Init(JSONReader &jR, string name)
+void DialogueManager::Init(JSONReader &jR, string name, vector<int> traits)
 {
+	//Dialogue
 	m_dialogueObject = jR.loadDialogue();
 	m_path = "q0";
 	m_font.loadFromFile("Resources/arial.ttf");
@@ -17,7 +18,19 @@ void DialogueManager::Init(JSONReader &jR, string name)
 	m_name.setFont(m_font);
 	m_name.setFillColor(sf::Color::White);
 	m_name.setCharacterSize(30);
-	//PrintObject();
+	
+	//Traits
+	openness = traits.at(0);
+	conscientious = traits.at(1);
+	extroversion = traits.at(2);
+	agreeableness = traits.at(3);
+	neuroticism = traits.at(4);
+	m_chart.Init(814, 10);
+	m_chart.AddBar(openness, sf::Color::Blue, "Openness");
+	m_chart.AddBar(conscientious, sf::Color::Yellow, "Conscientious");
+	m_chart.AddBar(extroversion, sf::Color::Green, "Extroversion");
+	m_chart.AddBar(agreeableness, sf::Color::Red, "Agreeableness");
+	m_chart.AddBar(neuroticism, sf::Color::White, "Neuroticism");
 }
 
 void DialogueManager::DisplayText()
@@ -72,8 +85,11 @@ void DialogueManager::Select()
 	{
 		if (m_dialogueObject.second.at(i).m_id == m_path)
 		{
+			ChangeTraits(m_dialogueObject.second.at(i).m_Answers.at(m_selected).m_deltas);
+
 			m_previousPath = m_path;
 			m_path = m_dialogueObject.second.at(i).m_Answers.at(m_selected).m_path;
+			
 			if (m_path != "exit")
 			{
 				GetText();
@@ -86,6 +102,44 @@ void DialogueManager::Select()
 			}
 		}
 		if (brk) break;
+	}
+}
+
+void DialogueManager::ChangeTraits(vector<int> t)
+{
+	//Openness
+	openness += t.at(0);
+	if (openness > 100) { openness = 100; }
+	else if (openness < 0) { openness = 0; }
+	
+	//Conscientious
+	conscientious += t.at(1);
+	if (conscientious > 100) { conscientious = 100; }
+	else if (conscientious < 0) { conscientious = 0; }
+	
+	//Extroversion
+	extroversion += t.at(2);
+	if (extroversion > 100) { extroversion = 100; }
+	else if (extroversion < 0) { extroversion = 0; }
+	
+	//Agreeableness
+	agreeableness += t.at(3);
+	if (agreeableness > 100) { agreeableness = 100; }
+	else if (agreeableness < 0) { agreeableness = 0; }
+
+	//Neuroticism
+	neuroticism += t.at(4);
+	if (neuroticism > 100) { neuroticism = 100; }
+	else if (neuroticism < 0) { neuroticism = 0; }
+
+	m_chart.UpdateValues(openness, conscientious, extroversion, agreeableness, neuroticism);
+}
+
+void DialogueManager::Update(sf::RenderWindow &w)
+{
+	if (m_speaking)
+	{
+		m_chart.Update(w);
 	}
 }
 
@@ -109,6 +163,8 @@ void DialogueManager::Render(sf::RenderWindow &w)
 		m_name.setPosition(getPixelCoords(40, 520, w));
 		w.draw(m_textSelector);
 		w.draw(m_name);
+
+		m_chart.Render(w);
 	}
 }
 
@@ -167,32 +223,5 @@ void DialogueManager::GetText()
 			m_textVect.at(k).setFillColor(sf::Color(211, 126, 6));
 		}
 		else m_textVect.at(k).setFillColor(sf::Color::Black);
-	}
-}
-
-void DialogueManager::PrintObject()
-{
-
-	for (int i = 0; i < m_dialogueObject.second.size(); i++)
-	{
-		//Question
-		cout << "Question: " + m_dialogueObject.second.at(i).m_Question.m_Text << endl;
-		
-		for (int j = 0; j < m_dialogueObject.second.at(i).m_Answers.size(); j++)
-		{
-			//Answer
-			cout << "Answer: " + m_dialogueObject.second.at(i).m_Answers.at(j).m_Text << endl;
-			//Path
-			cout << "Path: " + m_dialogueObject.second.at(i).m_Answers.at(j).m_path << endl;
-
-			cout << "Deltas: " << endl;
-			
-			for (int k = 0; k < m_dialogueObject.second.at(i).m_Answers.at(j).m_deltas.size(); k++)
-			{
-				cout << "t" + to_string(k) + " " + to_string(m_dialogueObject.second.at(i).m_Answers.at(j).m_deltas.at(k)) << endl;
-			}
-		}
-
-		cout << "" << endl;
 	}
 }

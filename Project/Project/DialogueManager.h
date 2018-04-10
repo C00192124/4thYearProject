@@ -3,6 +3,7 @@
 #include "Dialogue.h"
 #include <SFML\Graphics.hpp>
 #include "InputManager.h"
+#include "BarChart.h"
 
 class DialogueManager
 {
@@ -10,8 +11,9 @@ public:
 	DialogueManager() {};
 	~DialogueManager() {};
 
-	void Init(JSONReader &jR, string name);
+	void Init(JSONReader &jR, string name, vector<int> traits);
 	void DisplayText();
+	void Update(sf::RenderWindow &w);
 	void Render(sf::RenderWindow &w);
 	void MoveUp();
 	void MoveDown();
@@ -22,7 +24,7 @@ public:
 
 private:
 	
-	void PrintObject();
+	//Dialogue stuff
 	void GetText();
 	sf::Vector2f getPixelCoords(int x, int y, sf::RenderWindow &w);
 	string SetString(string s, int width);
@@ -42,6 +44,17 @@ private:
 	int m_selected;
 	int m_maxSelections;
 	bool m_speaking;
+
+	//Trait stuff
+	int openness;
+	int conscientious;
+	int extroversion;
+	int agreeableness;
+	int neuroticism;
+
+	void ChangeTraits(vector<int> t);
+
+	BarChart m_chart;
 
 };
 

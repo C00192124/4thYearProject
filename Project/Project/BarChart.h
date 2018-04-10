@@ -14,7 +14,8 @@ public:
 
 	void Init(int xPos, int yPos);
 	void AddBar(int value, sf::Color color, string name);
-	void Update(sf::RenderWindow &w, vector<int> traits);
+	void Update(sf::RenderWindow &w);
+	void UpdateValues(int o, int c, int e, int a, int n);
 	void Render(sf::RenderWindow &w);
 
 private:

@@ -39,9 +39,6 @@
     <ClCompile Include="Json\JSONValue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TraitManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="DialogueManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -78,9 +75,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Json\JSONValue.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TraitManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DialogueManager.h">

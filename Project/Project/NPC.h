@@ -2,7 +2,6 @@
 #include "Sprite.h"
 #include "JSONReader.h"
 #include "DialogueManager.h"
-#include "TraitManager.h"
 
 using namespace std;
 
@@ -20,7 +19,6 @@ public:
 
 private:
 	DialogueManager m_dM;
-	TraitManager m_tM;
 	JSONReader m_jR;
 	vector<int> m_traits;
 	string m_spriteFile;

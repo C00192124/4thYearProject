@@ -23,7 +23,7 @@ void BarChart::AddBar(int value, sf::Color color, string name)
 	cout << m_info << endl;
 }
 
-void BarChart::Update(sf::RenderWindow &w, vector<int> traits)
+void BarChart::Update(sf::RenderWindow &w)
 {
 	if ((sf::Mouse::getPosition(w).x < (m_position.x + m_outline.getSize().x))
 		&& (sf::Mouse::getPosition(w).x > m_position.x)
@@ -33,6 +33,23 @@ void BarChart::Update(sf::RenderWindow &w, vector<int> traits)
 		drawInfo = true;
 	}
 	else drawInfo = false;
+}
+
+void BarChart::UpdateValues(int o, int c, int e, int a, int n)
+{
+	m_barChart.at(0).setSize(sf::Vector2f(40, o * 2));
+	m_barChart.at(1).setSize(sf::Vector2f(40, c * 2));
+	m_barChart.at(2).setSize(sf::Vector2f(40, e * 2));
+	m_barChart.at(3).setSize(sf::Vector2f(40, a * 2));
+	m_barChart.at(4).setSize(sf::Vector2f(40, n * 2));
+
+	string tempString;
+	tempString.append("Openness: " + to_string(o) + "\n");
+	tempString.append("Conscientious: " + to_string(c) + "\n");
+	tempString.append("Extroversion: " + to_string(e) + "\n");
+	tempString.append("Agreeableness: " + to_string(a) + "\n");
+	tempString.append("Neuroticism: " + to_string(n) + "\n");
+	m_chartInfo.setString(sf::String(tempString));
 }
 
 void BarChart::Render(sf::RenderWindow &w)

@@ -7,8 +7,7 @@ void NPC::Init(string jsonFile, sf::Vector2f pos)
 	m_traits = m_jR.loadTraits();
 	m_spriteFile = m_jR.loadSprite();
 	m_name = m_jR.loadName();
-	m_tM = TraitManager(m_traits);
-	m_dM.Init(m_jR, m_name);
+	m_dM.Init(m_jR, m_name, m_traits);
 	m_texture.loadFromFile(m_spriteFile);
 	m_sprite.setTexture(m_texture);
 	m_sprite.setPosition(pos);
@@ -50,8 +49,8 @@ void NPC::Update(sf::Sprite &s, InputManager *i, sf::RenderWindow &w)
 				m_speakTimer = 0;
 			}
 		}
+		m_dM.Update(w);
 		m_speaking = m_dM.isSpeaking();
-		m_tM.Update(w);
 	}
 
 }
@@ -62,7 +61,6 @@ void NPC::Render(sf::RenderWindow &w)
 	if (m_speaking)
 	{
 		m_dM.Render(w);
-		m_tM.Render(w);
 	}
 }
 
