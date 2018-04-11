@@ -53,6 +53,7 @@ private:
 	int neuroticism;
 
 	void ChangeTraits(vector<int> t);
+	bool CheckThresholds();
 
 	BarChart m_chart;
 

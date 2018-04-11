@@ -13,7 +13,7 @@
       "trait": "t0",
       "value": 20,
       "condition": "below",
-      "path": "q3"
+      "path": "q6"
     }
   },
   "dialogue": {
@@ -24,10 +24,10 @@
           "text": "Did you kill her?",
           "path": "q1",
           "deltas": {
-            "t0": -10,
+            "t0": -20,
             "t1": 0,
             "t2": 0,
-            "t3": -5,
+            "t3": 0,
             "t4": 0
           }
         },
@@ -35,10 +35,10 @@
           "text": "Where were you last night?",
           "path": "q2",
           "deltas": {
-            "t0": 5,
+            "t0": 0,
             "t1": 0,
             "t2": 0,
-            "t3": 10,
+            "t3": 0,
             "t4": 0
           }
         },
@@ -62,10 +62,10 @@
           "text": "Sorry, I didn't mean to offend.",
           "path": "q0",
           "deltas": {
-            "t0": 10,
+            "t0": 0,
             "t1": 0,
             "t2": 0,
-            "t3": 10,
+            "t3": 0,
             "t4": 0
           }
         },

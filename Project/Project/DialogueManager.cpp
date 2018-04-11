@@ -87,8 +87,11 @@ void DialogueManager::Select()
 		{
 			ChangeTraits(m_dialogueObject.second.at(i).m_Answers.at(m_selected).m_deltas);
 
-			m_previousPath = m_path;
-			m_path = m_dialogueObject.second.at(i).m_Answers.at(m_selected).m_path;
+			if (!CheckThresholds())
+			{
+				m_previousPath = m_path;
+				m_path = m_dialogueObject.second.at(i).m_Answers.at(m_selected).m_path;
+			}
 			
 			if (m_path != "exit")
 			{
@@ -103,6 +106,119 @@ void DialogueManager::Select()
 		}
 		if (brk) break;
 	}
+}
+
+bool DialogueManager::CheckThresholds()
+{
+	for (int i = 0; i < m_dialogueObject.first.size(); i++)
+	{
+		if (m_dialogueObject.first.at(i).m_trait == "t0")
+		{
+			if (m_dialogueObject.first.at(i).m_con == "below")
+			{
+				if (openness <= m_dialogueObject.first.at(i).m_num)
+				{
+					m_previousPath = m_path;
+					m_path = m_dialogueObject.first.at(i).m_path;
+					return true;
+				}
+			}
+			else
+			{
+				if (openness >= m_dialogueObject.first.at(i).m_num)
+				{
+					m_previousPath = m_path;
+					m_path = m_dialogueObject.first.at(i).m_path;
+					return true;
+				}
+			}
+		}
+		else if (m_dialogueObject.first.at(i).m_trait == "t1")
+		{
+			if (m_dialogueObject.first.at(i).m_con == "below")
+			{
+				if (conscientious <= m_dialogueObject.first.at(i).m_num)
+				{
+					m_previousPath = m_path;
+					m_path = m_dialogueObject.first.at(i).m_path;
+					return true;
+				}
+			}
+			else
+			{
+				if (conscientious >= m_dialogueObject.first.at(i).m_num)
+				{
+					m_previousPath = m_path;
+					m_path = m_dialogueObject.first.at(i).m_path;
+					return true;
+				}
+			}
+		}
+		else if (m_dialogueObject.first.at(i).m_trait == "t2")
+		{
+			if (m_dialogueObject.first.at(i).m_con == "below")
+			{
+				if (extroversion <= m_dialogueObject.first.at(i).m_num)
+				{
+					m_previousPath = m_path;
+					m_path = m_dialogueObject.first.at(i).m_path;
+					return true;
+				}
+			}
+			else
+			{
+				if (extroversion >= m_dialogueObject.first.at(i).m_num)
+				{
+					m_previousPath = m_path;
+					m_path = m_dialogueObject.first.at(i).m_path;
+					return true;
+				}
+			}
+		}
+		else if (m_dialogueObject.first.at(i).m_trait == "t3")
+		{
+			if (m_dialogueObject.first.at(i).m_con == "below")
+			{
+				if (agreeableness <= m_dialogueObject.first.at(i).m_num)
+				{
+					m_previousPath = m_path;
+					m_path = m_dialogueObject.first.at(i).m_path;
+					return true;
+				}
+			}
+			else
+			{
+				if (agreeableness >= m_dialogueObject.first.at(i).m_num)
+				{
+					m_previousPath = m_path;
+					m_path = m_dialogueObject.first.at(i).m_path;
+					return true;
+				}
+			}
+		}
+		else if (m_dialogueObject.first.at(i).m_trait == "t4")
+		{
+			if (m_dialogueObject.first.at(i).m_con == "below")
+			{
+				if (neuroticism <= m_dialogueObject.first.at(i).m_num)
+				{
+					m_previousPath = m_path;
+					m_path = m_dialogueObject.first.at(i).m_path;
+					return true;
+				}
+			}
+			else
+			{
+				if (neuroticism >= m_dialogueObject.first.at(i).m_num)
+				{
+					m_previousPath = m_path;
+					m_path = m_dialogueObject.first.at(i).m_path;
+					return true;
+				}
+			}
+		}
+	}
+	return false;
 }
 
 void DialogueManager::ChangeTraits(vector<int> t)
