@@ -3,9 +3,14 @@ c:\users\gameuser\desktop\4thyearproject\project\project\dialoguemanager.cpp(53)
 c:\users\gameuser\desktop\4thyearproject\project\project\dialoguemanager.cpp(70): warning C4018: '<': signed/unsigned mismatch
 c:\users\gameuser\desktop\4thyearproject\project\project\dialoguemanager.cpp(84): warning C4018: '<': signed/unsigned mismatch
 c:\users\gameuser\desktop\4thyearproject\project\project\dialoguemanager.cpp(113): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\desktop\4thyearproject\project\project\dialoguemanager.cpp(272): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\desktop\4thyearproject\project\project\dialoguemanager.cpp(314): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\desktop\4thyearproject\project\project\dialoguemanager.cpp(325): warning C4018: '<': signed/unsigned mismatch
-c:\users\gameuser\desktop\4thyearproject\project\project\dialoguemanager.cpp(333): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\4thyearproject\project\project\dialoguemanager.cpp(270): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\4thyearproject\project\project\dialoguemanager.cpp(312): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\4thyearproject\project\project\dialoguemanager.cpp(323): warning C4018: '<': signed/unsigned mismatch
+c:\users\gameuser\desktop\4thyearproject\project\project\dialoguemanager.cpp(331): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  main.cpp
+  Player.cpp
+  NPC.cpp
   Project.vcxproj -> C:\Users\gameuser\Desktop\4thYearProject\Project\Debug\Project.exe
   Project.vcxproj -> C:\Users\gameuser\Desktop\4thYearProject\Project\Debug\Project.pdb (Partial PDB)

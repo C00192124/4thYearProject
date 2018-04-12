@@ -118,8 +118,7 @@ bool DialogueManager::CheckThresholds()
 			{
 				if (openness <= m_dialogueObject.first.at(i).m_num)
 				{
-					m_previousPath = m_path;
-					m_path = m_dialogueObject.first.at(i).m_path;
+					ProcessThresholds(i);
 					return true;
 				}
 			}
@@ -127,8 +126,7 @@ bool DialogueManager::CheckThresholds()
 			{
 				if (openness >= m_dialogueObject.first.at(i).m_num)
 				{
-					m_previousPath = m_path;
-					m_path = m_dialogueObject.first.at(i).m_path;
+					ProcessThresholds(i);
 					return true;
 				}
 			}
@@ -139,8 +137,7 @@ bool DialogueManager::CheckThresholds()
 			{
 				if (conscientious <= m_dialogueObject.first.at(i).m_num)
 				{
-					m_previousPath = m_path;
-					m_path = m_dialogueObject.first.at(i).m_path;
+					ProcessThresholds(i);
 					return true;
 				}
 			}
@@ -148,8 +145,7 @@ bool DialogueManager::CheckThresholds()
 			{
 				if (conscientious >= m_dialogueObject.first.at(i).m_num)
 				{
-					m_previousPath = m_path;
-					m_path = m_dialogueObject.first.at(i).m_path;
+					ProcessThresholds(i);
 					return true;
 				}
 			}
@@ -160,8 +156,7 @@ bool DialogueManager::CheckThresholds()
 			{
 				if (extroversion <= m_dialogueObject.first.at(i).m_num)
 				{
-					m_previousPath = m_path;
-					m_path = m_dialogueObject.first.at(i).m_path;
+					ProcessThresholds(i);
 					return true;
 				}
 			}
@@ -169,8 +164,7 @@ bool DialogueManager::CheckThresholds()
 			{
 				if (extroversion >= m_dialogueObject.first.at(i).m_num)
 				{
-					m_previousPath = m_path;
-					m_path = m_dialogueObject.first.at(i).m_path;
+					ProcessThresholds(i);
 					return true;
 				}
 			}
@@ -181,8 +175,7 @@ bool DialogueManager::CheckThresholds()
 			{
 				if (agreeableness <= m_dialogueObject.first.at(i).m_num)
 				{
-					m_previousPath = m_path;
-					m_path = m_dialogueObject.first.at(i).m_path;
+					ProcessThresholds(i);
 					return true;
 				}
 			}
@@ -190,8 +183,7 @@ bool DialogueManager::CheckThresholds()
 			{
 				if (agreeableness >= m_dialogueObject.first.at(i).m_num)
 				{
-					m_previousPath = m_path;
-					m_path = m_dialogueObject.first.at(i).m_path;
+					ProcessThresholds(i);
 					return true;
 				}
 			}
@@ -202,8 +194,7 @@ bool DialogueManager::CheckThresholds()
 			{
 				if (neuroticism <= m_dialogueObject.first.at(i).m_num)
 				{
-					m_previousPath = m_path;
-					m_path = m_dialogueObject.first.at(i).m_path;
+					ProcessThresholds(i);
 					return true;
 				}
 			}
@@ -211,14 +202,21 @@ bool DialogueManager::CheckThresholds()
 			{
 				if (neuroticism >= m_dialogueObject.first.at(i).m_num)
 				{
-					m_previousPath = m_path;
-					m_path = m_dialogueObject.first.at(i).m_path;
+					ProcessThresholds(i);
 					return true;
 				}
 			}
 		}
 	}
 	return false;
+}
+
+void DialogueManager::ProcessThresholds(int i)
+{
+	m_previousPath = m_path;
+	m_path = m_dialogueObject.first.at(i).m_path;
+	vector<Threshold>::iterator iter(m_dialogueObject.first.begin());
+	m_dialogueObject.first.erase(iter + i);
 }
 
 void DialogueManager::ChangeTraits(vector<int> t)

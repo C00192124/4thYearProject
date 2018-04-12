@@ -54,6 +54,7 @@ private:
 
 	void ChangeTraits(vector<int> t);
 	bool CheckThresholds();
+	void ProcessThresholds(int i);
 
 	BarChart m_chart;
 

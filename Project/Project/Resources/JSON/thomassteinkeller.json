@@ -24,7 +24,7 @@
           "text": "Did you kill her?",
           "path": "q1",
           "deltas": {
-            "t0": -20,
+            "t0": -15,
             "t1": 0,
             "t2": 0,
             "t3": 0,
@@ -92,7 +92,7 @@
             "t0": 0,
             "t1": 0,
             "t2": 0,
-            "t3": 10,
+            "t3": 0,
             "t4": 0
           }
         },
@@ -100,10 +100,10 @@
           "text": "Did you kill her?",
           "path": "q1",
           "deltas": {
-            "t0": -10,
+            "t0": 0,
             "t1": 0,
             "t2": 0,
-            "t3": -5,
+            "t3": 0,
             "t4": 0
           }
         },
@@ -130,7 +130,7 @@
             "t0": 0,
             "t1": 0,
             "t2": 0,
-            "t3": 10,
+            "t3": 0,
             "t4": 0
           }
         },
@@ -138,10 +138,10 @@
           "text": "Nevermind, Goodbye.",
           "path": "exit",
           "deltas": {
-            "t0": -10,
+            "t0": 0,
             "t1": 0,
             "t2": 0,
-            "t3": -5,
+            "t3": 0,
             "t4": 0
           }
         }
@@ -157,7 +157,7 @@
             "t0": 0,
             "t1": 0,
             "t2": 0,
-            "t3": 10,
+            "t3": 0,
             "t4": 0
           }
         },
@@ -165,10 +165,10 @@
           "text": "Why so quick to put the blame on somebody else?",
           "path": "q5",
           "deltas": {
-            "t0": -10,
+            "t0": 0,
             "t1": 0,
             "t2": 0,
-            "t3": -5,
+            "t3": 0,
             "t4": 0
           }
         },
@@ -176,10 +176,10 @@
           "text": "Thanks for the help.",
           "path": "exit",
           "deltas": {
-            "t0": -10,
+            "t0": 0,
             "t1": 0,
             "t2": 0,
-            "t3": -5,
+            "t3": 0,
             "t4": 0
           }
         }
@@ -195,7 +195,7 @@
             "t0": 0,
             "t1": 0,
             "t2": 0,
-            "t3": 10,
+            "t3": 0,
             "t4": 0
           }
         },
@@ -203,10 +203,10 @@
           "text": "Okay, thanks for the help Thomas.",
           "path": "exit",
           "deltas": {
-            "t0": -10,
+            "t0": 0,
             "t1": 0,
             "t2": 0,
-            "t3": -5,
+            "t3": 0,
             "t4": 0
           }
         }
@@ -219,10 +219,37 @@
           "text": "I think that concludes our talk!",
           "path": "exit",
           "deltas": {
-            "t0": -10,
+            "t0": 0,
             "t1": 0,
             "t2": 0,
-            "t3": -5,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "Please, just a moment more!",
+          "path": "q7",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q7": {
+      "qtext": "No, you've said enough, I clearly can't help you.",
+      "ans": {
+        "a0": {
+          "text": "I think that concludes our talk!",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
             "t4": 0
           }
         }
