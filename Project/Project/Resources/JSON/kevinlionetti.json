@@ -2,10 +2,10 @@
   "name": "Kevin Lionetti",
   "sprite": "Resources/Sprites/KevinLionetti.png",
   "traits": {
-    "t0": "70",
+    "t0": "40",
     "t1": "65",
     "t2": "75",
-    "t3": "70",
+    "t3": "30",
     "t4": "30"
   },
   "thresholds": {
@@ -13,7 +13,7 @@
       "trait": "t0",
       "value": 20,
       "condition": "below",
-      "path": "q3"
+      "path": "q4"
     }
   },
   "dialogue": {
@@ -62,10 +62,10 @@
           "text": "Sorry, I shouldn't have been so forward.",
           "path": "q0",
           "deltas": {
-            "t0": 10,
+            "t0": 5,
             "t1": 0,
             "t2": 0,
-            "t3": 10,
+            "t3": -5,
             "t4": 0
           }
         },
@@ -128,10 +128,10 @@
           "path": "q4",
           "deltas": {
             "t0": 0,
-            "t1": 0,
+            "t1": -5,
             "t2": 0,
             "t3": 0,
-            "t4": 0
+            "t4": -5
           }
         },
         "a1": {
@@ -148,10 +148,37 @@
       }
     },
     "q4": {
-      "qtext": "I dunno, I'm done with this conversation! If you have any evidence then accuse me, if not get out of my sight!",
+      "qtext": "In the kitchen, I'm done with this conversation! If you have any evidence then accuse me, if not get out of my sight!",
       "ans": {
         "a0": {
           "text": "Sorry, I'll be on my way.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "You know something so tell me!",
+          "path": "q5",
+          "deltas": {
+            "t0": 10,
+            "t1": 0,
+            "t2": 0,
+            "t3": 10,
+            "t4": -10
+          }
+        }
+      }
+    },
+    "q5": {
+      "qtext": "I saw that caretaker chap looking awful suspicious last night, he was just moping around looking sinister. If you were after somebody I'd check him out.",
+      "ans": {
+        "a0": {
+          "text": "Thanks for the help Kevin.",
           "path": "exit",
           "deltas": {
             "t0": 0,

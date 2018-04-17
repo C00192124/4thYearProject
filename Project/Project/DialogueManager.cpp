@@ -322,7 +322,7 @@ void DialogueManager::GetText()
 
 			for (int j = 0; j < m_dialogueObject.second.at(i).m_Answers.size(); j++)
 			{
-				m_tempText.setString(SetString(m_dialogueObject.second.at(i).m_Answers.at(j).m_Text,30));
+				m_tempText.setString(SetString(m_dialogueObject.second.at(i).m_Answers.at(j).m_Text,33));
 				m_textVect.push_back(m_tempText);
 			}
 		}

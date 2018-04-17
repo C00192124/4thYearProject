@@ -1,0 +1,254 @@
+{
+  "name": "Jason Vicini",
+  "sprite": "Resources/Sprites/JasonVicini.png",
+  "traits": {
+    "t0": "80",
+    "t1": "65",
+    "t2": "75",
+    "t3": "70",
+    "t4": "50"
+  },
+  "thresholds": {
+    "tr0": {
+      "trait": "t0",
+      "value": 50,
+      "condition": "below",
+      "path": "q5"
+    }
+  },
+  "dialogue": {
+    "q0": {
+      "qtext": "Do I have to talk?",
+      "ans": {
+        "a0": {
+          "text": "Did you kill her?",
+          "path": "q1",
+          "deltas": {
+            "t0": -15,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "Where were you last night?",
+          "path": "q2",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a2": {
+          "text": "Nevermind, Goodbye.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q1": {
+      "qtext": "Are you crazy? I loved her!",
+      "ans": {
+        "a0": {
+          "text": "Sorry, I shouldn't have been so forward.",
+          "path": "q2",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "You loved her? Can you tell me more?",
+          "path": "q3",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a2": {
+          "text": "Nevermind, Goodbye.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q2": {
+      "qtext": "I spent most of the night with her. The only time I took my eyes off of her was when I went to the bathroom.",
+      "ans": {
+        "a0": {
+          "text": "So what you are saying is you were the last to see her alive?",
+          "path": "q4",
+          "deltas": {
+            "t0": -15,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "That sounds kinda creepy Jason!",
+          "path": "q1",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a2": {
+          "text": "Nevermind, Goodbye.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q3": {
+      "qtext": "Ever since high school, I'm her best friend but everybody knew I wanted more, everybody except her.",
+      "ans": {
+        "a0": {
+          "text": "Almost the type of rejection that might make somebody snap.",
+          "path": "q5",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "Where were you last night Jason?",
+          "path": "q2",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a2": {
+          "text": "Nevermind, Goodbye.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q4": {
+      "qtext": "Maybe the second last, I didn't kill her so I suppose whoever did would be the last.",
+      "ans": {
+        "a0": {
+          "text": "I get that you are grieving but sarcasm isn't necessary.",
+          "path": "q5",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "Do you have an alibi?",
+          "path": "q5",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a2": {
+          "text": "Nevermind, Goodbye.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q5": {
+      "qtext": "I swear I didn't kill her!",
+      "ans": {
+        "a0": {
+          "text": "Okay Jason i think that's enough!",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "One last thing, did you ever tell her you loved her?",
+          "path": "q6",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q6": {
+      "qtext": "Last night.",
+      "ans": {
+        "a0": {
+          "text": "Okay, thanks Jason, that's all for now.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    }
+  }
+}

@@ -6,7 +6,7 @@
     "t1": "10",
     "t2": "75",
     "t3": "65",
-    "t4": "60"
+    "t4": "45"
   },
   "thresholds": {
     "tr0": {
@@ -14,6 +14,12 @@
       "value": 20,
       "condition": "below",
       "path": "q6"
+    },
+    "tr1": {
+      "trait": "t4",
+      "value": 30,
+      "condition": "below",
+      "path": "q8"
     }
   },
   "dialogue": {
@@ -35,7 +41,7 @@
           "text": "Where were you last night?",
           "path": "q2",
           "deltas": {
-            "t0": 0,
+            "t0": 5,
             "t1": 0,
             "t2": 0,
             "t3": 0,
@@ -62,9 +68,9 @@
           "text": "Sorry, I didn't mean to offend.",
           "path": "q0",
           "deltas": {
-            "t0": 0,
+            "t0": -5,
             "t1": 0,
-            "t2": 0,
+            "t2": -10,
             "t3": 0,
             "t4": 0
           }
@@ -89,7 +95,7 @@
           "text": "Can somebody confirm this?",
           "path": "q3",
           "deltas": {
-            "t0": 0,
+            "t0": -5,
             "t1": 0,
             "t2": 0,
             "t3": 0,
@@ -100,8 +106,8 @@
           "text": "Did you kill her?",
           "path": "q1",
           "deltas": {
-            "t0": 0,
-            "t1": 0,
+            "t0": -10,
+            "t1": -10,
             "t2": 0,
             "t3": 0,
             "t4": 0
@@ -127,11 +133,11 @@
           "text": "Did you see anything suspicious?",
           "path": "q4",
           "deltas": {
-            "t0": 0,
+            "t0": 10,
             "t1": 0,
             "t2": 0,
-            "t3": 0,
-            "t4": 0
+            "t3": -10,
+            "t4": -10
           }
         },
         "a1": {
@@ -157,15 +163,15 @@
             "t0": 0,
             "t1": 0,
             "t2": 0,
-            "t3": 0,
-            "t4": 0
+            "t3": -10,
+            "t4": -10
           }
         },
         "a1": {
           "text": "Why so quick to put the blame on somebody else?",
           "path": "q5",
           "deltas": {
-            "t0": 0,
+            "t0": -10,
             "t1": 0,
             "t2": 0,
             "t3": 0,
@@ -176,7 +182,7 @@
           "text": "Thanks for the help.",
           "path": "exit",
           "deltas": {
-            "t0": 0,
+            "t0": 10,
             "t1": 0,
             "t2": 0,
             "t3": 0,
@@ -192,10 +198,10 @@
           "text": "I'm not so sure it should be him I'm worrying about!",
           "path": "q6",
           "deltas": {
-            "t0": 0,
+            "t0": -10,
             "t1": 0,
-            "t2": 0,
-            "t3": 0,
+            "t2": 10,
+            "t3": -5,
             "t4": 0
           }
         },
@@ -230,7 +236,7 @@
           "text": "Please, just a moment more!",
           "path": "q7",
           "deltas": {
-            "t0": 0,
+            "t0": -5,
             "t1": 0,
             "t2": 0,
             "t3": 0,
@@ -244,6 +250,49 @@
       "ans": {
         "a0": {
           "text": "I think that concludes our talk!",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q8": {
+      "qtext": "You should go ask Kevin about this, I saw him looking suspicious last night.",
+      "ans": {
+        "a0": {
+          "text": "You told me you saw nothing suspicious?",
+          "path": "q9",
+          "deltas": {
+            "t0": -10,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 5
+          }
+        },
+        "a1": {
+          "text": "Okay, thank you Thomas.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 5
+          }
+        }
+      }
+    },
+    "q9": {
+      "qtext": "Well, I changed my mind.",
+      "ans": {
+        "a0": {
+          "text": "Okay, I can see I'm not gonna get anywhere.",
           "path": "exit",
           "deltas": {
             "t0": 0,
