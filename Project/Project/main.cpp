@@ -33,9 +33,12 @@ void main()
 	ThomasSteinkeller.Init("Resources/JSON/thomassteinkeller.json", sf::Vector2f(9*64, 10*64));
 	NPC JasonVicini;
 	JasonVicini.Init("Resources/JSON/jasonvicini.json", sf::Vector2f(2*64, 17*64));
+	NPC JuliaLionetti;
+	JuliaLionetti.Init("Resources/JSON/julialionetti.json", sf::Vector2f(21*64, 4*64));
 	characters.push_back(KevinLionetti);
 	characters.push_back(ThomasSteinkeller);
 	characters.push_back(JasonVicini);
+	characters.push_back(JuliaLionetti);
 
 	while (window.isOpen())
 	{

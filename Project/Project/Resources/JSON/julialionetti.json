@@ -1,0 +1,210 @@
+{
+  "name": "Julia Lionetti",
+  "sprite": "Resources/Sprites/JuliaLionetti.png",
+  "traits": {
+    "t0": "75",
+    "t1": "35",
+    "t2": "70",
+    "t3": "60",
+    "t4": "40"
+  },
+  "thresholds": {
+    "tr0": {
+      "trait": "t0",
+      "value": 50,
+      "condition": "below",
+      "path": "q6"
+    }
+  },
+  "dialogue": {
+    "q0": {
+      "qtext": "What?",
+      "ans": {
+        "a0": {
+          "text": "Did you kill her?",
+          "path": "q1",
+          "deltas": {
+            "t0": -15,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "Where were you last night?",
+          "path": "q2",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a2": {
+          "text": "Nevermind, Goodbye.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q1": {
+      "qtext": "If that's how you're gonna treat a woman in mourning then you can leave.",
+      "ans": {
+        "a0": {
+          "text": "I'm sorry, that was rude.",
+          "path": "q0",
+          "deltas": {
+            "t0": 5,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "Alright, Goodbye.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q2": {
+      "qtext": "I spent the night with my husband, he got drunk and I had to take care of the fool.",
+      "ans": {
+        "a0": {
+          "text": "Who can confirm this?",
+          "path": "q3",
+          "deltas": {
+            "t0": 5,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "Okay, thanks for the help.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q3": {
+      "qtext": "Well I suppose my husband can. But he probably doesn't remember a thing. Ehm ... Keira saw us heading to our room.",
+      "ans": {
+        "a0": {
+          "text": "You don't sound so sure.",
+          "path": "q4",
+          "deltas": {
+            "t0": -10,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "And did you leave said room after that?",
+          "path": "q5",
+          "deltas": {
+            "t0": -10,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a2": {
+          "text": "Thanks for the help.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q4": {
+      "qtext": "I'm pretty sure I know what I did, isn't it your job to find out who did this? It wasn't me so get to work!",
+      "ans": {
+        "a0": {
+          "text": "Okay Julia, thanks for the help",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q5": {
+      "qtext": "No we stayed there all night, I'm sure you don't want the nitty gritty.",
+      "ans": {
+        "a0": {
+          "text": "You're right I don't, thanks.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        },
+        "a1": {
+          "text": "Perhaps you could tell me?",
+          "path": "q6",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    },
+    "q6": {
+      "qtext": "We stayed there all night, that's all you need to know!",
+      "ans": {
+        "a0": {
+          "text": "Thanks Julia.",
+          "path": "exit",
+          "deltas": {
+            "t0": 0,
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0
+          }
+        }
+      }
+    }
+  }
+}
